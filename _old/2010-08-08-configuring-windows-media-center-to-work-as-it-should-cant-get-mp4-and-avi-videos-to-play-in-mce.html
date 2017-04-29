@@ -1,0 +1,55 @@
+---
+layout: post
+title: Configuring Windows Media Center to work as it should - Can't get .mp4 and
+  .avi video's to play in MCE
+date: 2010-08-08 21:34:00.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Windows
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1997')?authkey=lwWj0qyaeIE%24
+  _wpas_skip_ms: '1'
+  _edit_last: '12010457'
+  _oembed_ce435fa33499c84c7fa61ee14d3aa171: "{{unknown}}"
+  _oembed_5b78edd2b5e584ff75ea2a36f99503eb: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1997" class="bvMsg">
+<p>I’m configuring Windows Media Center on my Windows 7 laptop to stream videos from my NAS (<a class="vt-p" href="http://www.netgear.com/stora">http://www.netgear.com/stora</a>).<br />
+I want to make sure everything work as I expect it before I start to order parts for my HTPC (<a class="vt-p" title="http://smnbss.spaces.live.com/blog/cns!A117AA5E007A0648!1996.entry" href="http://smnbss.spaces.live.com/blog/cns!A117AA5E007A0648!1996.entry">http://smnbss.spaces.live.com/blog/cns!A117AA5E007A0648!1996.entry</a>).</p>
+<p>The media center easily recognize my Stora, and I was able to add the shared folders to the MCE configuration, but I couldn't find most of the movies I had shared, just a couple of them. It turned out it’s a problem with the way the avi files are perceived from windows 7.</p>
+<p>The solution was to merge this file into the windows registry</p>
+<p>Windows Registry Editor Version 5.00</p>
+<p>[HKEY_CLASSES_ROOT.mpeg]<br />
+"Content Type"="video/mpeg"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.mpg]<br />
+"Content Type"="video/mpeg"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.avi]<br />
+"Content Type"="video/avi"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.m4v]<br />
+"Content Type"="video/mp4"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.asf]<br />
+"Content Type"="video/x-ms-asf"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.mov]<br />
+"Content Type"="video/quicktime"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.MPE]<br />
+"Content Type"="video/mpeg"<br />
+"PerceivedType"="video"</p>
+<p>[HKEY_CLASSES_ROOT.wmv]<br />
+"Content Type"="video/x-ms-wmv"<br />
+"PerceivedType"="video"</p>
+</div>

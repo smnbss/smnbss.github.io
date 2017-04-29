@@ -1,0 +1,39 @@
+---
+layout: post
+title: How to prevent crash in your site when crawled by GoogleBot
+date: 2008-10-04 20:21:52.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1337')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_f57374333b52b166493a2adedf0b5794: "{{unknown}}"
+  _oembed_bd3e08221818d1bd78be0e886253296f: "{{unknown}}"
+  _oembed_ca712ea28dfca1474ef3736d5dac155c: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1337" class="bvMsg">
+<p>Sometimes a site running on ASP.NET and IIS6 and implement UrlRewriting can crash when crawled by GoogleBot.</p>
+<p>This is due to a bug in Html<strong>32</strong>TextWriter used by the Adaptive Rendering feature in ASP.NET</p>
+<p>You can read more about the error here <a class="vt-p" title="http://todotnet.com/archive/0001/01/01/7472.aspx" href="http://todotnet.com/archive/0001/01/01/7472.aspx">:</a><br />
+<a class="vt-p" href="http://todotnet.com/archive/0001/01/01/7472.aspx">http://todotnet.com/archive/0001/01/01/7472.aspx</a><br />
+<a class="vt-p" title="http://aspnet.4guysfromrolla.com/demos/printPage.aspx?path=/articles/050504-1.aspx" href="http://aspnet.4guysfromrolla.com/demos/printPage.aspx?path=/articles/050504-1.aspx">http://aspnet.4guysfromrolla.com/demos/printPage.aspx?path=/articles/050504-1.aspx</a></p>
+<p>It happened to my <a class="vt-p" href="http://www.gurgle.com">www.gurgle.com</a> after we implemented friendly urls for SEO.</p>
+<p>If you’re using Visual Studio 2008 Team System Edition, and you are using <a class="vt-p" href="http://msdn.microsoft.com/en-us/library/aa337591.aspx">Webtest</a> to Test and LoadTest your site, there’s something you can do to prevent your site to crash when crawled by GooleBot or yahoo bot.<br />
+You can easily create a custom Browser Template, with the GoogleBot User-Agent and test your site simulating that browser.</p>
+<p>HowTo: create a custom Browser Template for LoadTesting<br />
+<a class="vt-p" title="http://blogs.msdn.com/slumley/pages/adding-an-ie7-browser-template-for-use-by-web-tests.aspx" href="http://blogs.msdn.com/slumley/pages/adding-an-ie7-browser-template-for-use-by-web-tests.aspx">http://blogs.msdn.com/slumley/pages/adding-an-ie7-browser-template-for-use-by-web-tests.aspx</a></p>
+<p>You can then create a loadtest file and execute the webtest using the GoogleBot crawler</p>
+<p><a class="vt-p" href="http://ydyfhw.bay.livefilestore.com/y1pRz6EvwRsCkdA3z1TD7UCvzLlBfwbPBfekg_JP7faC31fzHak744nL7GYx5ZDNrJPgakIc7O12qf20z-R3XdVeA?PARTNER=WRITER"><img style="display:inline;border:0;" title="image" src="{{ site.baseurl }}/assets/y1pMUmI1bLXH4b8aAc8CleiqO87y6NMEKockFB4e8MhnmVkiVVt7CYNNO8J_CDBG3JH05A6WRpho-s?PARTNER=WRITER" border="0" alt="image" width="386" height="255" /></a></p>
+</div>

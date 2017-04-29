@@ -1,0 +1,52 @@
+---
+layout: post
+title: Sharding with SQL Azure - Introducing Federation in SQL Azure
+date: 2010-12-15 10:13:59.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+- Computers and Internet
+- SQL Azure
+tags: []
+meta:
+  _wpas_done_ms: '1'
+  _oembed_a4663d922500046ec251e2651b5ad3b1: "{{unknown}}"
+  _oembed_f1d1cf540d437ba2a45012e038dafc90: "{{unknown}}"
+  _oembed_7aaefc797ce991e261959fe00f25fda4: "{{unknown}}"
+  _oembed_6185851716d146b7e2c5c439495f11e8: "{{unknown}}"
+  _oembed_6aafe5acb361d720f04a94e876fa2ac9: "{{unknown}}"
+  _oembed_5c8dfa2e80b37f459420fd37dfca0b93: "{{unknown}}"
+  _oembed_02fc8a9d7986dda20ea8e265fd795ebc: "{{unknown}}"
+  _oembed_8c9e9ea6580d770ffe09af7d771d068e: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>Scalability often mean scaling out, and sharding the DB.    <br />Until now, the sharding has always been managed at the application level, with a lot of manual work by developers with big scalability requirements.</p>
+<p>Most of the NOSQL dbs like MongoDB, Raven etc, already support sharding, since it’s much easier to shard a non relational database than a relational database.</p>
+<p>Finally MS is trying to add this concept of sharding built in into Sql, specifically into SQL Azure.    <br />A single instance of SQL Azure can be up to 50GB, I believe this limit is due to the fact that each instance is replicated in 2 other locations, so it is be quite difficult to keep in sync a single massive instance bigger than that. For this reason Azure users where invited to shard their data across multiple SQL instances, adding a lot of work&#160; to the developers implementing the solution.</p>
+<p>MS released a whitepaper on sharding few days ago [1]. It’s a long and interesting document about the best practices of data sharding, and some details of the implementation of SQL Azure Federations and how we’ll be able in future to do it at the database level instead of doing it at the application level.</p>
+<p>The following schematic outlines the concepts in SQL Azure with Federations:</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/12/6131-f1-bmp-550x0.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="6131.F1.bmp-550x0" border="0" alt="6131.F1.bmp-550x0" src="{{ site.baseurl }}/assets/6131-f1-bmp-550x0_thumb.jpg" width="431" height="289" /></a></p>
+<p>&#160;</p>
+<p>Cihan Biyikoglu (Program Manager at Microsoft - SQL Azure) has the most interesting blog [2] about SQL Azure and has recently posted about this new Federation concept.</p>
+<p>He has a very useful introduction to the new “keywords” (or key concepts if you want) [3] that will be useful to understand how everything works. </p>
+<ul>
+<li><strong>Federations </strong>represent all data being partitioned. It defined the distribution method as well as the domain of valid values for the federation key. In the picture below, you can see that the customer_federation is part of sales_db. </li>
+<li><strong>Federation Key </strong>is the key used for partitioning the data. </li>
+<li><strong>Atomic Unit (AU) </strong>represent a single instance value of the federation key. Atomic units cannot be separated thus all rows that contain the same instance value of the federation key always stay together. </li>
+<li><strong>Federation Member </strong>(aka Shard) is the physical container for a range of atomic units. </li>
+<li><strong>Federation Root </strong>is the database that houses federations and federation directory. </li>
+<li><strong>Federated Tables </strong>refer to tables in federation members that contain partitioned data, as opposed to </li>
+<li><strong>Reference Tables </strong>refer to table that contain data that is repeated in federation members for lookup purposes. </li>
+</ul>
+<p><a href="http://smnbss.files.wordpress.com/2010/12/2627-image_thumb_4451a556.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="2627.image_thumb_4451A556" border="0" alt="2627.image_thumb_4451A556" src="{{ site.baseurl }}/assets/2627-image_thumb_4451a556_thumb.png" width="316" height="325" /></a></p>
+<p>It’s all very exiting to see such a technology being implemented at the database level, keeping the ACID (<a href="http://en.wikipedia.org/wiki/ACID">http://en.wikipedia.org/wiki/ACID</a>) properties inside a single Shard, and at the same time allowing the horizontal scalability needed in most modern systems.</p>
+<p><strong>1 - Sharding with SQL Azure      <br /></strong><a href="http://social.technet.microsoft.com/wiki/contents/articles/sharding-with-sql-azure.aspx">http://social.technet.microsoft.com/wiki/contents/articles/sharding-with-sql-azure.aspx</a></p>
+<p><strong>2 - SQL Azure - Your Data in the Cloud      <br /></strong><a href="http://blogs.msdn.com/b/cbiyikoglu/">http://blogs.msdn.com/b/cbiyikoglu/</a></p>
+<p><strong>3 - Building Scalable Database Solution with SQL Azure - Introducing Federation in SQL Azure</strong>     <br /><a href="http://blogs.msdn.com/b/cbiyikoglu/archive/2010/10/30/building-scalable-database-solution-in-sql-azure-introducing-federation-in-sql-azure.aspx">http://blogs.msdn.com/b/cbiyikoglu/archive/2010/10/30/building-scalable-database-solution-in-sql-azure-introducing-federation-in-sql-azure.aspx</a></p>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: sudo apt-get for Visual Studio 2010
+date: 2010-10-07 11:28:52.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+- Visual Studio 2010
+tags: []
+meta:
+  _wpas_done_ms: '1'
+  _oembed_3a143f4bfb638cb72cc8b308239ecd36: "{{unknown}}"
+  _oembed_ece2a9f4df01b63160df58c6155c4022: "{{unknown}}"
+  _oembed_e9181e582779015c10408b546a4b33dc: "{{unknown}}"
+  _oembed_5fbf8a5b76397dee56e049ad0cfe89a8: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>Microsoft is getting better and better at copying what is really cool from the other non Microsoft worlds.</p>
+<p>The news of the day is the release of <strong>NuPack</strong>, a Package Manager for visual studio project. It allows via command line to add packages to your existing application and it works really well.</p>
+<p>Let’s say you have a web project and you want to start to use <strong>NLog </strong>on that project.&#160; </p>
+<p>Until today you had to download the library from the NLog site (<a href="http://nlog-project.org/download">http://nlog-project.org/download</a>), copy the dll in a folder inside your solution, Open your web project, add a reference to the dll, update the web.config to make it work, with some trial and error.</p>
+<p>Starting from today, given you have installed NuPack (<a href="http://nupack.codeplex.com/">http://nupack.codeplex.com/</a>), the only thing you have to do is open the Package Manager Console (View-&gt;Other Windows) select your web project, type <strong>Add-Package NLog </strong>and you’re done.</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/10/image.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb.png" width="412" height="127" /></a></p>
+<p>The web.config is automatically updated, the dll is automatically downloaded in a folder called packages and a reference is added to your project.</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/10/image1.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb1.png" width="369" height="151" /></a></p>
+<p>Alternatively, if you do not like to use the command line console, you can right click on the project references folder and select Add Package Reference and you’ll see a list of packages you can add to the project.</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/10/image2.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb2.png" width="240" height="131" /></a></p>
+<p><a href="http://smnbss.files.wordpress.com/2010/10/image3.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb3.png" width="446" height="323" /></a></p>
+<p>This is probably one of the best thing I’ve seen ever <img style="border-style:none;" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="{{ site.baseurl }}/assets/wlemoticon-smile.png" /></p>

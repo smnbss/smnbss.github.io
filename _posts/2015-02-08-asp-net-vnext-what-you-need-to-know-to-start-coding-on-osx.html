@@ -1,0 +1,75 @@
+---
+layout: post
+title: ASP.NET vNext - what you need to know to start coding on OSX
+date: 2015-02-08 10:38:48.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+tags:
+- ASP.NET vNext
+- Omnisharp
+meta:
+  sharing_disabled: '1'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _publicize_pending: '1'
+  _oembed_7b6282ac13ec3421bbe3e08c02534d94: "{{unknown}}"
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _edit_last: '12010457'
+  geo_public: '0'
+  _oembed_30565e36b383ebf58da7d724f47166d5: "{{unknown}}"
+  _oembed_e16d16d41f728095eff5485913c39467: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>ASP.NET vNext on OSX is, as expected, a lot of manual work to get it up and running.<br />
+I'm so used to open Visual Studio, create a new project and press F5 that this new Open Source approach is slightly more work than I wish it was.</p>
+<p>Here is a list of useful links:<br />
+<a href="http://brew.sh/">Install Brew</a><br />
+&gt;ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</p>
+<p><a href="https://github.com/aspnet/home#os-x">Install ASP.NET on OSX<br />
+</a>Ensure you have the latest version of mono installed (Mono JIT compiler version 3.12.0)<br />
+&gt;brew unlink mono<br />
+&gt;brew install mono<br />
+&gt;mono -V<br />
+Install aspnet<br />
+&gt;brew tap aspnet/k<br />
+&gt;brew install kvm<br />
+&gt;source kvm.sh<br />
+&gt;kvm upgrade</p>
+<p>Add source kvm.sh to your ~/.bash_profile so that you do not have to source kvm every time you open a new terminal</p>
+<p><a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">Install Yeoman generators for ASP.NET 5<br />
+</a>&gt;npm install -g yo generator-aspnet</p>
+<p><a href="http://www.omnisharp.net/">Install one of the OmniSharp IDE for Cross platform .NET development<br />
+</a>My choice is sublime-text3<a href="http://www.omnisharp.net/"><br />
+</a>&gt;brew install caskroom/cask/brew-cask<br />
+&gt;brew cleanup &amp;&amp; brew cask cleanup<br />
+&gt;brew cask install sublime-text3</p>
+<p>Register sublime on your terminal<br />
+&gt;ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime</p>
+<p>Build a new App<br />
+&gt;yo aspnet<br />
+Manually select Web App and type YoWebApp as name<br />
+&gt;cd YoWebApp<br />
+&gt;kpm restore<br />
+&gt;kpm build<br />
+&gt;sublime .<br />
+&gt;k kestrel</p>
+<p><a href="https://smnbss.files.wordpress.com/2015/02/out2.gif"><img class="alignnone wp-image-849 size-full" src="{{ site.baseurl }}/assets/out2.gif" alt="out" width="600" height="400" /></a></p>
+<p><span style="font-style:inherit;line-height:1.625;">Read what Scott Hanselman (</span><a style="font-style:inherit;line-height:1.625;" href="https://twitter.com/shanselman">@shanselman</a><span style="font-style:inherit;line-height:1.625;">) has got to say about .NET as Open Source</span></p>
+<p><a href="http://www.hanselman.com/blog/AnnouncingNET2015NETasOpenSourceNETonMacandLinuxandVisualStudioCommunity.aspx">Announcing .NET 2015 - .NET as Open Source, .NET on Mac and Linux, and Visual Studio Community</a></p>
+<p>Looks like a lot of effort to me, but I'm sure I'll get used to it in the end.<br />
+I'm hugely in favour of the <a href="http://www.mono-project.com/">Mono</a> runtime, and I've been <a href="http://smnbss.com/2011/02/05/planetx-multiplatform-windows-wp7-xbox-and-iphone-development/">playing with it since 2011</a> so I'm super super excited to see what is coming up from Microsoft :)</p>
+<p>Good Luck! :)</p>

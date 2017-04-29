@@ -1,0 +1,38 @@
+---
+layout: post
+title: Application Warm-Up Module for IIS7
+date: 2011-02-03 13:00:38.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ASP.NET
+- IIS
+tags: []
+meta:
+  _wp_old_slug: application-warm-up-module-for-iis7-2
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_ef5b5a47e78b0203a9a78402f2f95a57: "{{unknown}}"
+  _oembed_dea716a53a6e0996b431bf133a96d188: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>This is another useful module for IIS that you can install from this page:<a class="vt-p" href="http://www.iis.net/download/applicationwarmup">http://www.iis.net/download/applicationwarmup</a>.</p>
+<p>This module will call a list of Urls every time the AppPool is recycled, making your site as responsive as possible from the first real http request.</p>
+<p>After you have installed the module, you can configure the list of urls from the IIS:</p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2011/02/image5.png"><img title="image" src="{{ site.baseurl }}/assets/image_thumb5.png?w=361&amp;h=158" border="0" alt="image" width="361" height="158" /></a></p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2011/02/image6.png"><img title="image" src="{{ site.baseurl }}/assets/image_thumb6.png?w=390&amp;h=289" border="0" alt="image" width="390" height="289" /></a></p>
+<p>Or you can configure the list from the web.config:</p>
+<pre>&lt;system.webServer&gt;
+&lt;httpWarmup&gt;
+&lt;requests&gt;
+&lt;add requestUrl="url1" allowedResponseCodes="200-399" warmupContext="" sendMode="Asynchronous" /&gt;
+&lt;add requestUrl="url2" allowedResponseCodes="200-399" warmupContext="" sendMode="Asynchronous" /&gt;
+&lt;/requests&gt;
+&lt;/httpWarmup&gt;
+&lt;/system.webServer&gt;</pre>

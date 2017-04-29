@@ -1,0 +1,102 @@
+---
+layout: post
+title: 'PlanetX, multiplatform: iPhone development (Part:3) - MonoGame–what a mess…
+  - #iPhone #WP7 #Xbox #XNA #Monotouch #XnaTouch'
+date: 2011-02-25 09:57:43.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- iPhone
+- WP7
+- XBOX
+- XNA
+tags: []
+meta:
+  _oembed_5aefd9a6fc2c9ae6ee1c2f16463096a8: "{{unknown}}"
+  _oembed_d7006ae7a189ed0cade786cb6dfd34a8: "{{unknown}}"
+  _oembed_cd3ddae234bc87a50d35ef404468de1a: "{{unknown}}"
+  _oembed_7acc9627c2c0d8df2af0f911911a7354: "{{unknown}}"
+  _oembed_26a58d71a9f01521977db9afd85af750: "{{unknown}}"
+  _oembed_9832abaf99abcfcaf35a452c4a7d36ee: "{{unknown}}"
+  _oembed_40af8b77fd7126b64c567dc815b81e93: "{{unknown}}"
+  _oembed_8141a037af1529bda841b25caabe2385: "{{unknown}}"
+  _oembed_f920d1cdeb51f3bbc10badfa8f8dbaf3: "{{unknown}}"
+  _oembed_9a55d9863162b06ccf46b3943805ffe2: "{{unknown}}"
+  _oembed_c375c5c4b525ec97b70693e23f701dc6: "{{unknown}}"
+  _oembed_81a136be61f7735ba5cd3fd49367a968: "{{unknown}}"
+  _oembed_e73592b2363d4fcf813a6e61464b5469: "{{unknown}}"
+  _oembed_7ef94e6420c9d246357d32dbe9d84feb: "{{unknown}}"
+  _oembed_a0f44521f55799a04b408cc8a93b312a: "{{unknown}}"
+  _oembed_8c80f23970e230adbe9d9fc69227bc4f: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p><strong></strong></p>
+<p>Here I’m publishing a discussion I had via email with Andrew Russell (<a title="http://bit.ly/f21nDj" href="http://bit.ly/f21nDj">http://bit.ly/f21nDj</a>) about his forking of XnaTouch project (now called Monogame) and the creation of ExEn.</p>
+<p>The guy is a smart .net developer and XNA passionate, he had developed some games for Xbox and WP7 as an Independent Indy Game developer, and I invite you to go and download his games Dark: <a title="http://bit.ly/fX3pnQ" href="http://bit.ly/fX3pnQ">http://bit.ly/fX3pnQ</a> and Light Blocks <a title="http://bit.ly/hiWcsC" href="http://bit.ly/hiWcsC">http://bit.ly/hiWcsC</a>.</p>
+<p>As many other .net developers, he’s trying to find a way to recreate the XNA framework for the iPhone and Android phone.   <br />That would mean 90% code share between Xbox, WP7, Windows, iPhone, and Android, covering a huge percentage of the market.</p>
+<p>Unfortunately (IMHO) he decided that XnaTouch (now called monogame) wasn’t good enough, and instead of improving it, he decided to fork it and create a total new product called ExEn (<a title="http://bit.ly/hpwjx4" href="http://bit.ly/hpwjx4">http://bit.ly/hpwjx4</a>).</p>
+<p>His Idea is that “combining the work of a dedicated, paid engineer (me) <strong>with</strong> the work of open source contributors“ will produce a better final result.</p>
+<p>While I do not disagree with that, and I think he’s doing a great job trying to finance himself to work full time on the project, I also think that forking the project, and spending time back porting bug fixes (1) from Monogame on his on personal implementation, instead of working <strong>WITH</strong> the open source contributors is a waste of brain power.</p>
+<p>Have a read at hour conversation and let me know what you think.</p>
+<p>==================================================</p>
+<p><strong>From: smnbss@hotmail.com      <br />Sent: Thursday, February 24/02/2011 12:28 AM      <br /></strong><strong>To: Andrew Russell      <br />Subject: Re: ExEn vs monogame</strong> </p>
+<p>Hi Andrew, a friend of mine just sent me a link to a link that talks    <br />about you <a title="http://bit.ly/e94HJG" href="http://bit.ly/e94HJG">http://bit.ly/e94HJG</a>     <br />The idea is uber cool, and as you might know you’re not the one working     <br />on it, <a title="http://bit.ly/eaRerW" href="http://bit.ly/eaRerW">http://bit.ly/eaRerW</a> has in mind exactly your same target.     <br />I heard Miguel de Icaza will be helping to port monogame to OSX App     <br />Store too...     <br />Is there any reason why you’re not joining forces with them?     <br />I’ve been working with/on monogame for a few weeks now, and it’ seems     <br />that most of the porting has been done,     <br />but it’s like a mix of XNA 3.1 and 4 apis...     <br />And they’ve now started to implement the android version     <br />Have you already started with your development?     <br />Is there any chance the 2 teams can work on the same codebase/project?     <br />Hope the project will be very successful     <br />Simone     <br /><a href="http://about.me/smnbss">http://about.me/smnbss</a>     </p>
+<p><strong>From: Andrew Russell      <br />Sent: Thursday, February 24, 2011 6:16 AM       <br />To: simone basso       <br />Subject: Re: ExEn vs monogame</strong> </p>
+<p>Hi Simone,</p>
+<p>It looks like MonoGame is, in fact, the same project as XnaTouch and    <br />that they have very recently renamed themselves.</p>
+<p>So, in fact, ExEn *is* MonoGame with a lot of patches to improve    <br />performance and stability. (And a Silverlight port on the side!)</p>
+<p>(Admittedly, in the time since opening the ExEn funding project, they've    <br />fixed some of the worst bugs themselves. That's competition for you!)</p>
+<p>I am not aware of any current plans by Miguel de Icaza to help port    <br />MonoGame/XnaTouch to any platform. I am under the impression that the     <br />idea was suggested for iOS/MonoTouch at one point - but that no further     <br />action was taken.</p>
+<p>For the detailed reasoning why I forked ExEn from XnaTouch and    <br />SilverSprite, read my blog post here:</p>
+<p><a title="http://bit.ly/if6yt1" href="http://bit.ly/if6yt1">http://bit.ly/if6yt1</a></p>
+<p>If you have any other questions, I'd be happy to answer them :)</p>
+<p>Cheers,    <br />Andrew</p>
+<p><strong>From: smnbss@hotmail.com      <br />Sent: Thursday, February 24/02/2011 7:08 PM      <br /></strong><strong>To: Andrew Russell      <br />Subject: Re: ExEn vs monogame</strong> </p>
+<p><strong>     <br /></strong>Sorry for not reading your blog before :)</p>
+<p>I do not entirely agree with your choice (forking instead of submitting patches) because it seems to me a waste of brain power to create 2 frameworks with the same target (you said you want a fast and reliable framework while the monoxna guys wants completeness). You could have achieved the compile time errors on xnatouch by adding attributes to the unstable methods (something like the Onsolete attribute), helping them at the same time to improve performances.</p>
+<p>What the community needs is a fast AND complete framework, without both those characteristics, the framework would be useless...</p>
+<p>We developers are strange beasts..    <br />We prefer to fork instead of communicating our ideas :D</p>
+<p>I was starting to work on a porting of a game from xna to monoxna, but at this point I'll wait and see who wins between you 2 :)</p>
+<p>Keep up the great work</p>
+<p>Simone</p>
+<p><strong>From: Andrew Russell      <br />Sent: Thursday, February 24, 2011 10:52 AM       <br />To: simone basso       <br />Subject: Re: ExEn vs monogame </strong></p>
+<p>Simone,</p>
+<p>I wouldn't worry too much about seeing who &quot;wins&quot;. I fully expect ExEn    <br />and MonoGame to end up sharing the best bits of code between each other.     <br />Indeed, I will be looking to incorporate patches from MonoGame into ExEn     <br />during development.</p>
+<p>In theory you should be able to write a game for any of the three    <br />platforms (XNA, ExEn, MonoGame) and have a fairly easy job porting     <br />between them.</p>
+<p>Regarding completeness vs performance: When I was developing ExEn, I    <br />don't think I removed anything in XnaTouch simply for being slow,     <br />without replacing it with something better. The stuff that was outright     <br />deleted was either NotImplementedException, or buggy - which, in my     <br />mind, is even worse. So I've not really reduced the completeness level,     <br />in terms of practical usage - just API coverage.</p>
+<p>Cheers,    <br />Andrew     </p>
+<p><strong>From: smnbss@hotmail.com      <br />Sent: Thursday, February 24, 2011 11:04 AM       <br />To: Andrew Russell       <br />Subject: Re: ExEn vs monogame</strong> </p>
+<p>Anyway, the stuff you deleted could have been marked as   <br />[Obsolete(&quot;This method is totally bogus&quot;, true)]    <br />So the compiler can rise an error if referenced by any 3rd party project     <br />(like your game).</p>
+<p>So it would have brought to the attention of the community that some more    <br />work was required.</p>
+<p>We could have had a more mature product instead, and a bigger team working    <br />on the project...    <br />I really do not understand why, if the frameworks are interchangeable you     <br />wanted to fork the project and rename it...</p>
+<p>Open Source is meant to bring people with the same targets together, not to    <br />divide them creating fragmentation...    <br />It just require a bit of effort from both sides, but it can be achieved.</p>
+<p>Do you mind if I publish this email conversation on my blog?   <br />I think it's an interesting conversation for the people using both the     <br />frameworks</p>
+<p>S</p>
+<p><strong>From: Andrew Russell      <br />Sent: Thursday, February 24, 2011 3:42 PM       <br />To: simone basso       <br />Subject: Re: ExEn vs monogame</strong> </p>
+<p>Regarding bogus code:</p>
+<p>Really I think that there isn't that much of a difference between    <br />deleting the &quot;bogus&quot; code and marking it with an attribute. Remember     <br />that deleted code can be brought back from version control if need be.</p>
+<p>I personally think deletion is nicer from stylistic and maintenance    <br />standpoints. Maintenance In particular, for ExEn - with such sweeping     <br />changes, reducing the surface area helped significantly.</p>
+<p>(Also removing all that code saved many kilobytes on my Silverlight    <br />download size.)</p>
+<p>As you say, attributes could act as documentation of unfinished APIs.    <br />But that documentation could also be handled externally.</p>
+<p>We could explore these tradeoffs in detail, but really I don't think it    <br />merits further discussion (tabs vs spaces, anyone?). In either case, no     <br />one would want to actually call these functions.</p>
+<p>&#160;</p>
+<p>Regarding forking:</p>
+<p>You must remember that when I originally forked ExEn (for my own,    <br />internal use), that SilverSprite was a stalled project and XnaTouch was     <br />unuseably buggy and moving extremely slowly. (It seems that SilverSprite     <br />remains stalled, while XnaTouch, now MonoGame, has picked up its pace.)</p>
+<p>If I had submitted my changes as a patch, it would have touched the    <br />majority of files in the project. Replacing a large percentage them, and     <br />deleting a few more. As well as a fairly substantial restructure to     <br />merge in a separate project. Not to mention philosophical changes - like     <br />my decision to delete &quot;bogus&quot; code. In light of all this, a fork seemed     <br />highly appropriate.</p>
+<p>When I suggested that the projects are interchangeable, I meant    <br />externally. After all - they both attempt to replicate Microsoft's XNA     <br />API. Internally they are mostly very different.</p>
+<p>When I say I will be incorporating patches from MonoGame/XnaTouch, here    <br />is what I mean:</p>
+<p>(1) When I start working on ExEn (as a dedicated project, hence the    <br />funding), I will be going through the MonoGame/XnaTouch patch list,     <br />one-by-one, from the point where I was last in-sync. In areas where the     <br />code is identical (eg: GamerServices), I can simply adopt their code.</p>
+<p>For the code that is different (did I mention there is a lot?), I will    <br />very carefully have to go through and compare it with the changes I have     <br />made: Did I fix this bug? Is my code better? If not, how can I improve     <br />my code based on their improvements?</p>
+<p>So, yes, on the one hand I can see that this has resulted in some     <br />duplicated effort (eg: they've fixed bugs that I fixed independently).</p>
+<p>But I believe that, for the users of the finished product, the end    <br />result - of combining the work of a dedicated, paid engineer (me) with     <br />the work of open source contributors - will be better than what could be     <br />achieved by pursuing either approach independently.</p>
+<p>Please feel free to publish this email exchange on your blog. And I     <br />welcome any more questions you or your readers may have :)</p>
+<p>Cheers,   <br />Andrew</p>
+<p>&#160;</p>
+<p>[PS: If you do publish these, let me know when you do. I will gladly    <br />post links.]</p>

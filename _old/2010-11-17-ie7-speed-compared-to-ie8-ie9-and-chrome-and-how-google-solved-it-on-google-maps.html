@@ -1,0 +1,42 @@
+---
+layout: post
+title: IE7 speed compared to IE8, IE9 and Chrome and how google solved it on google
+  maps
+date: 2010-11-17 12:48:33.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+- Internet
+tags: []
+meta:
+  _wpas_done_ms: '1'
+  _oembed_498ebb68a5884ad968e11d31d39aee8d: "{{unknown}}"
+  _oembed_d899fbb57a9c08cf4f7ed9314ae38ed4: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>For the company I work for, I’m developing a mapping system to plot properties on a map.</p>
+<p>We are using google maps, with custom markers, and a fare amount of GPolygon to plot the outcodes and sector codes on the map.</p>
+<p>Some of our customers unfortunately are using IE7 so I’m doing some client side performance testing.</p>
+<p>The test is a real basic one:</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/11/image.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="image" src="{{ site.baseurl }}/assets/image_thumb.png" alt="image" width="367" height="315" border="0" /></a></p>
+<p>I create a GMap, create 5 polygons with 5 corners, create 20 polygons with 20 corners, so the same using svg, plot a matrix of markers 10x10 and then another of 20x20.</p>
+<p>Here are some expected but interesting results:</p>
+<p><a href="https://onedrive.live.com/redir?resid=A117AA5E007A0648%212016">https://onedrive.live.com/redir?resid=A117AA5E007A0648%212016</a></p>
+<p>It’s interesting to see that drawing a lot of markers is a lot slower than drawing polygons. I was curious to see how google solved this problem, so running fiddler I started to analyse the my browser requests when viewing properties on google maps.</p>
+<p>It turned out, google use layers to plot the markers, so instead of plotting hundreds of elements on  top of the map, it’s creating a transparent png image wit those markers on it and than layering this png on top of the map:</p>
+<p>So basically the first layer show the earth</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/11/layer1.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="layer1" src="{{ site.baseurl }}/assets/layer1_thumb.jpg" alt="layer1" width="244" height="244" border="0" /></a></p>
+<p>the second layer display the streets</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/11/layer2.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="layer2" src="{{ site.baseurl }}/assets/layer2_thumb.jpg" alt="layer2" width="244" height="244" border="0" /></a></p>
+<p>and the third layer is where they plot the additional data to display on the map</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/11/layer3.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="layer3" src="{{ site.baseurl }}/assets/layer3_thumb.jpg" alt="layer3" width="244" height="244" border="0" /></a></p>
+<p>what they then do is to track the position of the mouse on the map, and as soon as the mouse stops they do a webservice call to get more information about that specific tile.</p>
+<p>very smart google, very smart….</p>

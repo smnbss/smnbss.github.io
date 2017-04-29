@@ -1,0 +1,40 @@
+---
+layout: post
+title: How to extend orders schema in datawarehouse
+date: 2006-10-20 11:56:30.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Commerce Server
+- Microsoft
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!631')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!631" class="bvMsg">
+<p>In the development phase of a Commerce Server 2007 project, I extended Order classes following these instructions the  <a class="vt-p" href="http://blogs.msdn.com/vkumar/archive/2006/06/28/649896.aspx">vkumar</a> instructions.<br />
+I did it really good, and everything in my web site is working well, but few days ago, my customer asked me to create some reports with Reporting Services filtering the results by the field I added to the classes.<br />
+I need 2 days of work to find the solution to this problem.<br />
+The steps to do make the Datawarehouse work with this new fields are:</p>
+<ol>
+<li><a class="vt-p" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csvr2002/htm/cs_pp_workwithdw_how2.asp">Extending the Data Warehouse Logical Schema</a> :<br />
+Create a vbscript to add the new Member to all the extended classes</li>
+<li><a class="vt-p" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/CS07Default/html/6339d266-f60e-47c8-892c-0efcb6674f83.asp">Select Transaction Properties for Import</a>
+<ol>
+<li>Add the required field to csv_* views in database *_transactions</li>
+<li>Add the required records to the table TransDimension in *_transactions db.</li>
+</ol>
+</li>
+<li><a class="vt-p" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/CS07Default/html/6339d266-f60e-47c8-892c-0efcb6674f83.asp">Run an Import DTS Package</a><br />
+This will add new stored procedures in datawarehouse db, incrementing the MinorVersion field in ClsDef table, make the data import task point to these new stored procedures.</li>
+</ol>
+</div>

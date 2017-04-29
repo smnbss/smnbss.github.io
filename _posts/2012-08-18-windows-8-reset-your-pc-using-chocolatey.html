@@ -1,0 +1,35 @@
+---
+layout: post
+title: Windows 8 - Reset Your PC using Chocolatey
+date: 2012-08-18 08:45:19.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Computers and Internet
+tags: []
+meta:
+  _edit_last: '12010457'
+  _oembed_3161b74239227ebbe097e36986d9fdfa: "{{unknown}}"
+  _oembed_54836b40bcaaf99a1f3381adbeecb90b: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>I don't want to do too much copy and paste, go and read this blog post from <a class="vt-p" href="http://blog.maartenballiauw.be/post/2011/11/28/Repaving-your-PC-the-easier-way.aspx">Maarten Balliauw</a></p>
+<p>this is how I can reinstall most of the software I use with a couple of command line commands</p>
+<p>Go to www.myget.org,</p>
+<ul>
+<li>setup your feed</li>
+<li>add http://chocolatey.org/api/v2/ to the package sources</li>
+<li><a class="vt-p" href="http://smnbss.files.wordpress.com/2012/08/feeds.jpeg"><img class="alignnone size-medium wp-image-811" alt="feeds" src="{{ site.baseurl }}/assets/feeds.jpeg?w=300" width="300" height="107" /></a></li>
+<li>add all the packages you want to install.</li>
+<li><a class="vt-p" href="http://smnbss.files.wordpress.com/2012/08/packages.jpeg"><img class="alignnone size-medium wp-image-812" alt="packages" src="{{ site.baseurl }}/assets/packages.jpeg?w=300" width="300" height="157" /></a></li>
+</ul>
+<p>Install chocolatey on your machine:</p>
+<p>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin</p>
+<p>and install all the packages from the feed you just created:<br />
+cinst All -source http://www.myget.org/F/smnbsswin8</p>

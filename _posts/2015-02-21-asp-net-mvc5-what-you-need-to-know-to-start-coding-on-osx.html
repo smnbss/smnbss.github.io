@@ -1,0 +1,44 @@
+---
+layout: post
+title: ASP.NET MVC5 – what you need to know to start coding on OSX
+date: 2015-02-21 17:07:35.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+tags:
+- Yeoman
+meta:
+  sharing_disabled: '1'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _oembed_a5202d99c7b64000c17c8db47992854c: "{{unknown}}"
+  _oembed_7f6ab98a2b361150e63cc368acc6f256: "{{unknown}}"
+  _edit_last: '12010457'
+  _publicize_pending: '1'
+  _oembed_859fe86f61461f07abfbbd1a9caa8e6e: "{{unknown}}"
+  geo_public: '0'
+  _oembed_336f522ee4cb5c8edf0ac1883397b948: "{{unknown}}"
+  _wp_old_slug: asp-net-vnext-what-you-need-to-know-to-start-coding-on-osx-2
+  _oembed_62d08ad6f67f11f7e5c32ed067226f5a: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>I spent a bit of time today to try and get MVC5 up and running on my MAC.</p>
+<p>This Yeoman generator is a good starting point</p>
+<p>https://www.npmjs.com/package/generator-aspnetmvc</p>
+<p>Unfortunately the template is a bit out of date, and took me a while to get it to work.</p>
+<p>The use of <span class="pl-s1"><a href="https://github.com/has606/generator-aspnetmvc/blob/master/app/templates/_/WebTemplate/Views/Shared/_Layout.cshtml#L17">~</a> to reference the root does not seem to be supported in mono and there are a few newer version of <a href="https://www.nuget.org/packages/Microsoft.AspNet.WebPages/3.2.3">Microsoft.AspNet.WebPages</a> and <a href="https://www.nuget.org/packages/Microsoft.AspNet.Mvc/5.2.3">Microsoft.AspNet.Mvc</a></span></p>
+<p>Here is the final result with a working version of MVC5 on OSX</p>
+<p><a href="https://github.com/smnbss/YeomanMVC5">https://github.com/smnbss/YeomanMVC5</a></p>
+<p><img class="alignnone size-large wp-image-884" src="{{ site.baseurl }}/assets/mvc5.gif?w=788" alt="MVC5" width="788" height="584" /></p>

@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Discovering Windows Phone 7 #1'
+date: 2010-03-22 22:18:53.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- WP7
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1906')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_f0b11320d7e2613e4cda6e22a47e483f: "{{unknown}}"
+  _oembed_dda2bc7f82e524035abb23e74595f9ad: "{{unknown}}"
+  _oembed_5fbb12f6d3ea09616f1f2fde66f94e41: "{{unknown}}"
+  _oembed_9d7a2e5689b1041ca9e424e44bb9de4a: "{{unknown}}"
+  _oembed_22149395a540a20cd3b175b20a6d2a61: "{{unknown}}"
+  _oembed_d35fe2397c2afcfa2a3c019b08ef821f: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1906" class="bvMsg">
+<p>I’m starting to learn about XAN 4 for Windows Mobile 7, and going through all the examples from the MIX10.<br />
+The example I’m showing tonight comes from Shawn Hargreaves Blog (<a class="vt-p" href="http://blogs.msdn.com/shawnhar/archive/2007/06/08/displaying-the-framerate.aspx">http://blogs.msdn.com/shawnhar/archive/2007/06/08/displaying-the-framerate.aspx</a>) and It’s an example of how to create a Frame Rate counter component. I heard about this on this on the session CL19 (DEVELOPMENT AND DEBUGGING TOOLS FOR BUILDING XNA GAMES FOR WINDOWS PHONE - <a class="vt-p" href="http://live.visitmix.com/MIX10/Sessions/CL19">http://live.visitmix.com/MIX10/Sessions/CL19</a>).</p>
+<p>At first I had some problems with this specific line of code:</p>
+<p>_font = Game.Content.Load&lt;SpriteFont&gt;("Arial");</p>
+<p>The runtime was throwing a File Not Found exception.<br />
+I was initially adding the Arial.spritefont manually to the WindowsPhoneGame project, but digging the XNA Forums (<a class="vt-p" href="http://forums.xna.com/forums/">http://forums.xna.com/forums/</a>) I figured out that that resource needed to be added to the WindowsPhoneGameContent project instead of the Game project.</p>
+<p>In the end, here it’s my FPS counter</p>
+<p><a class="vt-p" rel="WLPP" href="https://mzp8bw.bay.livefilestore.com/y1mcfo2JDweqy4FvqVgCUFfXqF0XhAv7LF2I4AoCggp1HdVO-kJvKYX3P5FdmG4nxUAUdqnflbr6XVn2125Ab-1MZidXptRczwf1qWrIbUjepo6yvsgIDbOaB5zqWa8oyC07Yljr_JPFYh97iku6y6j2Q/image[2].png"><img style="display:inline;border-width:0;" title="image" src="{{ site.baseurl }}/assets/image_thumb073105bc.png?w=244" border="0" alt="image" width="244" height="225" /></a></p>
+<div style="margin:0;padding:0;"></div>
+</div>

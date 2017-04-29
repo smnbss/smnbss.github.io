@@ -1,0 +1,69 @@
+---
+layout: post
+title: 'How to convert all your podcast for your ipod in a single click #2'
+date: 2010-08-01 12:04:43.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- PowerShell
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1995')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_dad6a154aa5475eaceca1cd3828cad23: "{{unknown}}"
+  _oembed_f4cabfe6b90429d912a2351e32a6a291: "{{unknown}}"
+  _oembed_07f49a596ce9b17bb6739f5de44dc391: "{{unknown}}"
+  _oembed_258c63d4b157fa2b1002f558042897cd: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1995" class="bvMsg">
+<p>Here I have an improved version of the previous script.</p>
+<p>This version does not create a bat file but run the encoding directly, verify if the file has already been encoded, and if the file was processed completely ($inmedia.Properties.Duration.Minutes -ne $outmedia.Properties.Duration.Minutes)</p>
+<p>What do you need:</p>
+<ul>
+<li>HandBrakeCLI.exe: <a class="vt-p" href="https://trac.handbrake.fr/wiki/CLIGuide">https://trac.handbrake.fr/wiki/CLIGuide</a></li>
+<li>taglib-sharp.dll: (<a class="vt-p" href="http://developer.novell.com/wiki/index.php/TagLib_Sharp">http://developer.novell.com/wiki/index.php/TagLib_Sharp</a>)</li>
+</ul>
+<p>This script should also set the metatag for the mp4 files but it does not work, I need to spend some time and investigate this problem</p>
+<p>begin convert.ps1</p>
+<p>--------------------------------------------------------------</p>
+<p>[Reflection.Assembly]::LoadFrom( (Resolve-Path ".taglib-sharp.dll") )<br />
+$folders = get-childitem<br />
+Get-ChildItem $folders | Foreach {<br />
+if($_.Extension -eq '.mp4' -or $_.Extension -eq '.wmv' )<br />
+{<br />
+$in     = New-Object system.IO.FileInfo $_.fullname.ToString()<br />
+$indir  =  $in.Directory<br />
+$out    = New-Object system.IO.FileInfo $_.fullname.Replace('Podcasts', 'PodcastsEncoded').Replace('.wmv', '.mp4')<br />
+$outdir = $out.Directory<br />
+$in        = New-Object system.IO.FileInfo $_.fullname.ToString()<br />
+$outdir.Create();</p>
+<p>if(!$out.Exists)<br />
+{<br />
+.HandBrakeCLI.exe --input $in.fullname --output $out.fullname --preset="iPod"<br />
+} else {<br />
+trap [Exception] {<br />
+.HandBrakeCLI.exe --input $in.fullname --output $out.fullname --preset="iPod"<br />
+}<br />
+$inmedia = [TagLib.File]::Create($in.fullname)<br />
+$outmedia = [TagLib.File]::Create($out.fullname)<br />
+if($inmedia.Properties.Duration.Minutes -ne $outmedia.Properties.Duration.Minutes)<br />
+{<br />
+.HandBrakeCLI.exe --input $in.fullname --output $out.fullname --preset="iPod"<br />
+}<br />
+}<br />
+$media = [TagLib.File]::Create($out.fullname)<br />
+$media.Tag.Title = $in.fullname.Replace($indir.fullname+"", "");<br />
+$media.Tag.Album = $outdir.Name;<br />
+$media.Save()<br />
+}<br />
+}</p>
+<p>--------------------------------------------------------------</p>
+</div>

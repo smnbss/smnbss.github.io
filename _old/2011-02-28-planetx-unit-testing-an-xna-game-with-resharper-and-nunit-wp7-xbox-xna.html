@@ -1,0 +1,97 @@
+---
+layout: post
+title: PlanetX – Unit Testing an XNA game with Resharper and NUnit
+date: 2011-02-28 01:37:14.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- XNA
+tags: []
+meta:
+  _edit_last: '12010457'
+  _wp_old_slug: planetx-unit-testing-wp7-xbox-xna
+  _wpas_skip_ms: '1'
+  _oembed_94da2b7388218350f2848869cdcb54c8: "{{unknown}}"
+  _oembed_1b64251ae29d5e9cbd1f846795c0d83a: "{{unknown}}"
+  _oembed_4f475dd11ac921e94bbd8b171226bf54: "{{unknown}}"
+  _oembed_fc423649f5420f1294514717036d66b0: "{{unknown}}"
+  _oembed_fd804b1b0d764501ad29bcef7b1646c8: "{{unknown}}"
+  _oembed_98c80ab39b3828833c25b0fa0c43f54c: "{{unknown}}"
+  _oembed_8b18c1d54e4367452d6b7864cd099f9b: "{{unknown}}"
+  _oembed_443f2770ebeea0239776938dfadc30e4: "{{unknown}}"
+  _oembed_a350291a05377f58a8bc66a28fd56806: "{{unknown}}"
+  _oembed_3df6b9665eb7ac4cf81810247fbf1ca7: "{{unknown}}"
+  _oembed_ba4e2d449060c0eaf43241e73a841fd2: "{{unknown}}"
+  _oembed_d9862a79df857bf8794aade886acebdb: "{{unknown}}"
+  _oembed_706b30c943c39a9abcb4cf25138e03d0: "{{unknown}}"
+  _oembed_8d869016318c0c2c47224ddc32f4c248: "{{unknown}}"
+  _oembed_531f431b9865c2860687537fc5c1d118: "{{unknown}}"
+  _oembed_38fb6af8076749f7abd8e96dde4b1ef7: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>I decided to setup some unit testing on my XNA 4 game before it’s too late.</p>
+<p>I’m a huge fan of ReSharper (http://bit.ly/ekRH5g ), and I really cannot work without it and a few other plugins installed.</p>
+<p>StyleCop for ReSharper (<a title="http://bit.ly/f0AKep" href="http://bit.ly/f0AKep">http://bit.ly/f0AKep</a>) is one of them, VSCommands 2010 is another one <a title="http://bit.ly/dJPuFA" href="http://bit.ly/dJPuFA">http://bit.ly/dJPuFA</a>, but this is not time to describe what my ideal setup is.</p>
+<p>Back to the Unit Testing, Resharper supports OOTB nunit (<a title="http://bit.ly/eVqGrT" href="http://bit.ly/eVqGrT">http://bit.ly/eVqGrT</a>) and as mocking framework Moq(<a title="http://bit.ly/fXXbhT" href="http://bit.ly/fXXbhT">http://bit.ly/fXXbhT</a>) is my choice.</p>
+<p>So, how do you start to test your XNA game?</p>
+<p>Well follow these steps:</p>
+<ul>
+<li>Add a new XNA Windows Game on your solution</li>
+<li>Remove the Content Project that was created with this Game</li>
+<li>Select Content References and add the Content Project used in your game</li>
+<li>[OPTIONAL] Download Moq (<a title="http://bit.ly/fXXbhT" href="http://bit.ly/fXXbhT">http://bit.ly/fXXbhT</a>) and add a reference to Moq.dll or add it using NuGet (<a title="http://bit.ly/gu5yxB" href="http://bit.ly/gu5yxB">http://bit.ly/gu5yxB</a>)<br />
+<a href="http://smnbss.files.wordpress.com/2011/02/image12.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="image" src="{{ site.baseurl }}/assets/image_thumb12.png" border="0" alt="image" width="560" height="329" /></a></li>
+<li>Download nunit (<a title="http://bit.ly/eVqGrT" href="http://bit.ly/eVqGrT">http://bit.ly/eVqGrT</a>) and add a reference to nunit.framework.ddl and nunit.core.dll</li>
+<li>Add a reference to System.Windows.Forms and System.Drawing</li>
+<li>Create a folder called Helpers</li>
+<li>Download MockedGraphicsDeviceService.cs and DeviceType.cs from (<a title="http://bit.ly/gqWHpP" href="http://bit.ly/gqWHpP">http://bit.ly/gqWHpP</a>) and place them in the Helpers folder.</li>
+<li>Create a new class in Helpers called AssemblyUtilities.cs, the class must be like</li>
+<pre>/// &lt;summary&gt;    /// The assembly utilities.    /// &lt;/summary&gt;    internal class AssemblyUtilities    {        #region Public Methods
+
+        public static void Copycontent()        {            var buildLocation = typeof(AssemblyUtilities).Assembly.CodeBase.Remove(0, 8).Replace((typeof(AssemblyUtilities).Assembly.ManifestModule).Name, string.Empty).Replace("/", @"\") + @"\Content";            var deployLocation = typeof(AssemblyUtilities).Assembly.Location.Replace((typeof(AssemblyUtilities).Assembly.ManifestModule).Name, string.Empty) + @"\Content";            Directory.CreateDirectory(deployLocation);
+
+            //Now Create all of the directories            foreach (string dirPath in Directory.GetDirectories(buildLocation, "*", SearchOption.AllDirectories))                Directory.CreateDirectory(dirPath.Replace(buildLocation, deployLocation));
+
+            //Copy all the files            foreach (string newPath in Directory.GetFiles(buildLocation, "*.*", SearchOption.AllDirectories))                File.Copy(newPath, newPath.Replace(buildLocation, deployLocation), true);
+
+        }
+
+        /// &lt;summary&gt;        /// Use as first line in ad hoc tests (needed by XNA specifically)        /// &lt;/summary&gt;        public static void SetEntryAssembly()        {            SetEntryAssembly(typeof(AssemblyUtilities).Assembly);        }
+
+        /// &lt;summary&gt;        /// Allows setting the Entry Assembly when needed.         /// Use AssemblyUtilities.SetEntryAssembly() as first line in XNA ad hoc tests        /// &lt;/summary&gt;        /// &lt;param name="assembly"&gt;        /// Assembly to set as entry assembly        /// &lt;/param&gt;        public static void SetEntryAssembly(Assembly assembly)        {            var manager = new AppDomainManager();            FieldInfo entryAssemblyfield = manager.GetType().GetField(                "m_entryAssembly", BindingFlags.Instance | BindingFlags.NonPublic);            entryAssemblyfield.SetValue(manager, assembly);
+
+            AppDomain domain = AppDomain.CurrentDomain;            FieldInfo domainManagerField = domain.GetType().GetField(                "_domainManager", BindingFlags.Instance | BindingFlags.NonPublic);            domainManagerField.SetValue(domain, manager);        }
+
+        #endregion    }</pre>
+</ul>
+<p>You’ll need this class to fix a problem with the execution context of the tests with ReSharper, and to copy the Content folder from the build folder to the folder where the test is executed</p>
+<ul>
+<li>Create a new class where you want to place your tests (Tests.cs</li>
+<li>Add this code to your class</li>
+<pre> [TestFixtureSetUp]        public void SetUpTest()        {            AssemblyUtilities.Copycontent();        }
+
+        [SetUp]        public void SetUp()        {            AssemblyUtilities.SetEntryAssembly();        }</pre>
+</ul>
+<p>That will call the AssemblyUtilities methods as required</p>
+<ul>
+<li>Add your test method</li>
+<pre>[Test]        public void Test()        {            var gd = new MockedGraphicsDeviceService(DeviceType.Hardware, GraphicsProfile.HiDef);            gd.CreateDevice();            var contentManager = new ContentManager(gd.ServiceProvider) { RootDirectory = "Content" };            var resource = contentManager.Load&lt;Texture2D&gt;("Sprites/blank");        }</pre>
+</ul>
+<p>In this method we are using MockedGraphicsDeviceService to semi mock the GraphicsDevice so we can work with around it to test the other components of our game</p>
+<p>Two important points:</p>
+<ol>
+<li>You have to set your TestGame to run on the full .NET 4 framework in order to make Moq work</li>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image13.png"><img style="display:inline;" title="image" src="{{ site.baseurl }}/assets/image_thumb13.png" alt="image" width="434" height="197" /></a></ol>
+<p>&nbsp;</p>
+<p>There you have your Unit Test Library ready to use:</p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image14.png"><img style="display:inline;" title="image" src="{{ site.baseurl }}/assets/image_thumb14.png" alt="image" width="595" height="258" /></a></p>
+<p>P.S: you need to have a Sprites/blank.png file on your content project in order for this test to pass</p>
+<p>Download the code sample from <a title="http://bit.ly/eVxZmr" href="http://bit.ly/eVxZmr">http://bit.ly/eVxZmr</a></p>
+<p>Enjoy your unit testing <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" src="{{ site.baseurl }}/assets/wlemoticon-smile2.png" alt="Smile" /></p>

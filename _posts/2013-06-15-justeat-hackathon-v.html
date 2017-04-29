@@ -1,0 +1,42 @@
+---
+layout: post
+title: JustEat - Hackathon V
+date: 2013-06-15 09:03:09.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+- JustEat
+- SingalR
+tags: []
+meta:
+  _edit_last: '12010457'
+  _publicize_pending: '1'
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>At Just Eat we run regular Hackathons, the last one was last week, and yesterday we spent the afternoon showing what every team was working on.</p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2013/06/wp_20130614_001.jpg"><img style="display:inline;border-width:0;" title="WP_20130614_001" alt="WP_20130614_001" src="{{ site.baseurl }}/assets/wp_20130614_001_thumb.jpg" width="558" height="314" border="0" /></a></p>
+<p>The theme was about “<span style="color:#ff0000;">Empower consumers to love their takeaway experience</span>” and there were some amazing projects, some are listed below:</p>
+<ul>
+<li>Adding comments to individual order items by Sylvia / Greg<br />
+Empowering consumers to be able to add comments to individual order items</li>
+<li>A dashboard for use as a restaurant sales tool by Peter Mounce, Tony Harverson, Josue Calvo, Rob Lascelles<br />
+Supply and Demand dashboard by area based on search terms on JustEat.com and  restaurants in the area</li>
+<li>Ratings via sms by Pawel Matyjasek Anton Jefcoate Maxim Lakomkin Jaimal ChohanMake it easier for customers to rate their food so that other customers have more information available to them.</li>
+</ul>
+<p>Me and my team (<a class="vt-p" href="http://smnbss.files.wordpress.com/2013/06/image.png"><img style="display:inline;border-width:0;" title="image" alt="image" src="{{ site.baseurl }}/assets/image_thumb.png" width="46" height="46" border="0" /></a> Ahmed Malik and Sergey Balaboskin <a class="vt-p" href="http://smnbss.files.wordpress.com/2013/06/image1.png"><img style="display:inline;border-width:0;" title="image" alt="image" src="{{ site.baseurl }}/assets/image_thumb1.png" width="50" height="50" border="0" /></a>) worked on a Chat system to allow Customer Service agents to chat with the restaurants when there’s a problem about an order.</p>
+<p>The solution we came up with, is a Chat Server that read and writes messages to and from an inbound and outbound queue. A worker process on the CS App will read and write the messages from/to the same queues and push the messages in front of the Agent using SignalR. The Chat server is responsible for storing all the messages using an API, both the Chat server and CS App will read the historic messages from the API.</p>
+<p>The Chat server could potentially be integrated to the client system the restaurant use to receive orders from Just Eat, so it’s something they would be constantly looking at.</p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2013/06/chatsystem.png"><img style="display:inline;border-width:0;" title="Chat System" alt="Chat System" src="{{ site.baseurl }}/assets/chatsystem_thumb.png" width="560" height="226" border="0" /></a></p>
+<p>We uses <a class="vt-p" href="http://amzn.to/12MMrso">AWS SQS</a> as message queue and <a class="vt-p" href="http://bit.ly/1567hh5">SignalR</a> as WebSockets wrapper.<br />
+It was amazingly simple to set everything up, it took us a couple of days to get this up and running.</p>
+<p>From a business point of view this will allow CS agents to talk to multiple restaurants at the same time, where before they had to make phone calls and could only talk to one restaurant every 5 minutes or so.</p>
+<p>And remember:</p>
+<p>&nbsp;</p>

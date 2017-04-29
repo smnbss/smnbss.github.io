@@ -1,0 +1,39 @@
+---
+layout: post
+title: Me and MySql, MySql Enterprise Library V2
+date: 2006-01-03 15:52:42.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!318')?authkey=lwWj0qyaeIE%24
+  _oembed_808ea09176c95ec1845223ed6f2e9f72: "{{unknown}}"
+  _oembed_63e931d217d70a83cf78e35d59fb42fa: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!318" class="bvMsg">
+<div>As for my preview post, i need to let work MySql with Enterprise Library in .net 2.0</div>
+<div> </div>
+<div>First af all, i downloaded <strong>MySQL Connector/Net</strong> from <a href="http://dev.mysql.com/downloads/connector/net/1.0.html">http://dev.mysql.com/downloads/connector/net/1.0.html</a>.</div>
+<div> </div>
+<div>This is a well done project, that works very well if used alone.</div>
+<div>But if you want to use it with Enterprise Library...mmm there are a lot of issue to solve.</div>
+<div>First of all, the MySqlConnection, MySqlCommand, etc implements the right interface (IDbConnection, IDbCommand etc), but they dont inherits from DbConnection, DbCommand (and so on) as needed from Enterprise Library.</div>
+<div>Second, some classes required from Enterprise Library are missing, like</div>
+<div>MySqlClientPermission and MySqlClientPermissionAttribute.</div>
+<div> </div>
+<div>After i did the required customization to the library, i've implemented the MySql Enterprise Library data layer, and all seems to work well.</div>
+<div> </div>
+<div>I've done it for MySql 4.1, so it don't yet use Stored Procedures, but use an exteral file where you can put custom query.</div>
+<div> </div>
+<div>My project is open source and you can get it from my workspace</div>
+<div><a href="http://www.gotdotnet.com/workspaces/workspace.aspx?id=312b16e3-9c6c-4e38-99e6-3d30315039c8">http://www.gotdotnet.com/workspaces/workspace.aspx?id=312b16e3-9c6c-4e38-99e6-3d30315039c8</a></div>
+</div>

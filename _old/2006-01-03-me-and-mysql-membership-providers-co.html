@@ -1,0 +1,40 @@
+---
+layout: post
+title: Me and MySql, membership providers & Co.
+date: 2006-01-03 14:44:55.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!317')?authkey=lwWj0qyaeIE%24
+  _oembed_808ea09176c95ec1845223ed6f2e9f72: "{{unknown}}"
+  _oembed_dfbef93bb53e945dabc93f0a4016675c: "{{unknown}}"
+  _oembed_7d5351063d048a5cc835e787a89b4bc6: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!317" class="bvMsg">
+<div>For the CMS i've developed in the last year of my free time, i need to use MySql to store ASP.NET 2.0 membership, profiles and roles.</div>
+<div>So i begun to work to my MySql providers.</div>
+<div> </div>
+<div>First af all, i downloaded <strong>MySQL Connector/Net</strong> from <a href="http://dev.mysql.com/downloads/connector/net/1.0.html">http://dev.mysql.com/downloads/connector/net/1.0.html</a>.</div>
+<div> </div>
+<div>As second step, i look for AccessMembershipProvider (that is now an open source project no more supported in the final .net framework 2.0) and i founded it here : <a href="http://msdn.microsoft.com/vstudio/eula.aspx?id=96713a8e-b8d4-4d6e-bb8f-027e6c8e15d8">http://msdn.microsoft.com/vstudio/eula.aspx?id=96713a8e-b8d4-4d6e-bb8f-027e6c8e15d8</a>. </div>
+<div>It's based on oledb provider, so for me have been simple to change all oledb reference to MySql provider.</div>
+<div>I had some problems : </div>
+<div>    First is how MySql server work with Transaction.</div>
+<div>    I need to create MySqlTransaction via code rather than using MySqlCommand.</div>
+<div>    As second i had to change connection management from FileSystem (as needed for Access) to MySql.</div>
+<div> </div>
+<div>In the last step i've created all the needed tables importing them from access database using MySql-Front : <a href="http://www.mysqlfront.de/">http://www.mysqlfront.de/</a></div>
+<div> </div>
+<div>So, now, everithing seems to work well with MySql !!!</div>
+<div>Yuppy :):):)</div>
+</div>

@@ -1,0 +1,62 @@
+---
+layout: post
+title: How to convert all your podcast for your ipod in a single click
+date: 2010-07-31 21:15:43.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- PowerShell
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1994')?authkey=lwWj0qyaeIE%24
+  _oembed_180ebe6e03a8a8b8dc5b6f025895cdfd: "{{unknown}}"
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_6fbcd7367b871d0f796b922a8913da45: "{{unknown}}"
+  _oembed_ff2174f3d82f12146d1acc4fc8398562: "{{unknown}}"
+  _oembed_24e46ccf4a02bfe58f17d4adf1bc175e: "{{unknown}}"
+  _oembed_875fc9af0cf6bb6e799a4c26f267c426: "{{unknown}}"
+  _oembed_947734a4d9b7db29eb68d94d2a26a8bd: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1994" class="bvMsg">
+<p>I was looking at DropFolders (<a class="vt-p" href="http://inflagrantedelicto.memoryspiral.com/2010/06/now-available-air-2-0-handbrake-preset-manager-dropfolders/">http://inflagrantedelicto.memoryspiral.com/2010/06/now-available-air-2-0-handbrake-preset-manager-dropfolders/</a>) to convert all my podcasts. The software is cool but does not work with subfolders, so I came up the the simplest alternative possible. a powershell script.</p>
+<p>Given the folder with your podcasts are in is c:users{username}podcasts, copy the file HandBrakeCLI.exe and libgcc_s_sjlj-1.dll in that folder (download the files from <a class="vt-p" href="http://handbrake.fr/downloads2.php">http://handbrake.fr/downloads2.php</a>).</p>
+<p>Then create a new powershell script as follow</p>
+<p>$folders = get-childitem<br />
+#%{"from folder $folders"}<br />
+Get-ChildItem $folders  | Foreach {</p>
+<p>if($_.Extension -eq '.mp4' -or $_.Extension -eq '.wmv' )<br />
+{<br />
+$input = New-Object system.IO.FileInfo $_.fullname<br />
+$inputdir =  $input.Directory<br />
+$output = New-Object system.IO.FileInfo $_.fullname.Replace('Podcasts', 'PodcastsEncoded').Replace('.wmv', '.mp4')<br />
+$output.Directory.Create();<br />
+$outputdir = $output.Directory<br />
+$outputdir.Create()<br />
+$root = $inputdir.Parent<br />
+if(!$output.Exists)<br />
+{<br />
+%{"cd ""{0}""" -f $root.fullname}<br />
+%{"HandBrakeCLI.exe --input ""{0}"" --output ""{1}"" --preset=""iPod""" -f $_.fullname, $output.fullname}<br />
+}<br />
+}<br />
+} | out-File -filePath "convert.bat" -encoding "UTF8"</p>
+<p>.convert.bat</p>
+<p>and save it as convert.ps1</p>
+<p>once you run the powershell script, it will create all the folders in c:users{username}<strong>PodcastsEncoded </strong>and a new convert.bat in the podcast folder. This is a necessary step to make handbrake work. it will crash if the destination folder does not exist and I want to preserve the folder structure.</p>
+<p>You can the then run that bat file, and all your files will be automatically converted to a version that works on your ipod.<br />
+The important bits of the script are in bold; the first one(<strong>PodcastsEncoded </strong>) is the folder where your files will be created, the second one (<strong>preset</strong>) is the type of conversion handbrake will use to convert your files. There are many others you can use, see <a class="vt-p" href="https://trac.handbrake.fr/wiki/BuiltInPresets">https://trac.handbrake.fr/wiki/BuiltInPresets</a></p>
+<p>The powershell script check if the file has already been converted (if it exist on the destination folder) and will skip it if it has already been.</p>
+<p>This does not work if the file has been partially converted, but there’s not much I can do to avoid this or to verify if the file has totally been converted.</p>
+<p><strong>[Edit]</strong></p>
+<p>add</p>
+<p>.convert.bat</p>
+<p>at the bottom of the powershell script. it will run automatically the bat file.</p>
+</div>

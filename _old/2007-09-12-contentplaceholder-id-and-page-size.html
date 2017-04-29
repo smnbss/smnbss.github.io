@@ -1,0 +1,41 @@
+---
+layout: post
+title: ContentPlaceHolder ID and Page Size
+date: 2007-09-12 09:08:29.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1195')?authkey=lwWj0qyaeIE%24
+  _oembed_7c411749eab970576048cf575c3d8b4d: "{{unknown}}"
+  _oembed_a0b3fdfd8d1e009aca55a4384470a5b4: "{{unknown}}"
+  _oembed_b9772bb3220b3d504f67350f96266d9d: "{{unknown}}"
+  _oembed_11c5b96e0472f618d0966a9f2c251300: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1195" class="bvMsg">
+<p>We don't always think about the size of a web page, but when you need the top performance from a web site, you need to consider this aspect too.<br />I was trying to reduce my page size and I founded some interesting articles about how to remove the ViewState from the page and move it to the user cache (<a title="http://www.eggheadcafe.com/articles/20040613.asp" href="http://www.eggheadcafe.com/articles/20040613.asp">http://www.eggheadcafe.com/articles/20040613.asp</a>) without loosing performance time, or compress javascript files in different way (<a title="http://rumkin.com/tools/compression/compress_huff.php" href="http://rumkin.com/tools/compression/compress_huff.php">http://rumkin.com/tools/compression/compress_huff.php</a>; <a title="http://www.creativyst.com/Prod/3/" href="http://www.creativyst.com/Prod/3/">http://www.creativyst.com/Prod/3/</a>; <a title="http://www.west-wind.com/WebLog/posts/10294.aspx" href="http://www.west-wind.com/WebLog/posts/10294.aspx">http://www.west-wind.com/WebLog/posts/10294.aspx</a>).<br />But today I founded something more: <strong>how to save page size changing IDs of your controls.<br /></strong>In my pages I have many Repeater and Controls that implements the <a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.INamingContainer">INamingContainer</a> interface. what does it means? It means that when Asp.Net generate the client side control all the client controls they have a long name made by Parent.UniqueID+&quot;_&quot;+Parent.UniqueID+&quot;_&quot;+Parent.UniqueID+[...]+Child.UniqueID.</p>
+<pre>[<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System:2.0.0.0:b77a5c561934e089/System.ComponentModel.DesignerSerializationVisibilityAttribute/.ctor(System.ComponentModel.DesignerSerializationVisibility)">DesignerSerializationVisibility</a>(<br /><a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System:2.0.0.0:b77a5c561934e089/System.ComponentModel.DesignerSerializationVisibility">DesignerSerializationVisibility</a>.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System:2.0.0.0:b77a5c561934e089/System.ComponentModel.DesignerSerializationVisibility/Hidden">Hidden</a>), <br /><a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System:2.0.0.0:b77a5c561934e089/System.ComponentModel.BrowsableAttribute/.ctor(Boolean)">Browsable</a>(false), <br /><a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.WebSysDescriptionAttribute/.ctor(String)">WebSysDescription</a>(&quot;Control_ClientID&quot;)]
+public virtual <a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://mscorlib:2.0.0.0:b77a5c561934e089/System.String">string</a> <b><a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.Control/property:ClientID:String">ClientID</a></b>
+&#123;
+    get
+    &#123;
+        this.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.Control/EnsureID()">EnsureID</a>();
+        <a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://mscorlib:2.0.0.0:b77a5c561934e089/System.String">string</a> <b>uniqueID</b> = this.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.Control/property:UniqueID:String">UniqueID</a>;
+        if ((<a>uniqueID</a> != null) &amp;&amp; <br />           (<a>uniqueID</a>.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://mscorlib:2.0.0.0:b77a5c561934e089/System.String/IndexOf(Char):Int32">IndexOf</a>(this.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.Control/property:IdSeparator:Char">IdSeparator</a>) &gt;= 0))
+        &#123;
+            return <a>uniqueID</a><br />                   .<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://mscorlib:2.0.0.0:b77a5c561934e089/System.String/Replace(Char,Char):String">Replace</a>(this.<a href="http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://System.Web:2.0.0.0:b03f5f7f11d50a3a/System.Web.UI.Control/property:IdSeparator:Char">IdSeparator</a>, '_');
+        &#125;
+        return <a>uniqueID</a>;
+    &#125;
+&#125;</pre>
+<p>So, if one of the parent controls have a long UniqueID, <font face="Verdana">and you have a Repeater inside this control, all the controls inside the repeater will be rendered with a long ClientID.<br />Just to made an example, I changed on my Default.master <br /><em>&lt;asp:ContentPlaceHolder ID=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;/&gt;<br /></em>to <br /></font><em>&lt;asp:ContentPlaceHolder ID=&quot;CPH&quot; runat=&quot;server&quot;/&gt;</em><br />and the page size is decreased from 78K to 75K, 4% of the page size only changing one ID... <strong>isn't it unbelievable??</strong></p>
+</div>

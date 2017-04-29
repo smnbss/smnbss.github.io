@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<base href="http://boundary.london">
+		
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/fonts/MyFontsWebfontsKit.css" />
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/css/font-awesome-4.5.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/css/animations.css" />
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/style.css?v=1.3" />
+				<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/js/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/js/bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="http://boundary.london/wp-content/themes/untitled-boundary/js/swipe-box/css/swipebox.min.css">
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/hammer.js"></script>
+		<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/bootstrap/js/bootstrap.min.js"></script>
+				<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/jquery.matchHeight-min.js"></script>
+		<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/jquery.scrollto.js"></script>
+		<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/swipe-box/js/jquery.swipebox.min.js"></script>
+		
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher: "d0ae3f27-b88f-4b72-9920-652ec736b91b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+	</head>
+	<body>
+		<div id="navbar-wrapper">
+			<div id="navbar">
+				<div id="logo"><a href="http://boundary.london"><img id="desk-logo" src="http://boundary.london/wp-content/themes/untitled-boundary/images/BOUNDARY_logo.svg" alt="desk-logo" /><img id="mob-logo" src="http://boundary.london/wp-content/themes/untitled-boundary/images/boundary-logo.svg" alt="mobile-logo" /></a></div>
+				<div id="menu-btn">
+					<div class="ham"></div>
+					<div class="ham"></div>
+					<div class="ham"></div>
+				</div>
+				<a class="res-link desk" href="https://gc.synxis.com/rez.aspx?Hotel=24922&Chain=5154&template=GCF_BOUNDARY_V2&shell=GCF_BOUNDARY_V3&src=boundary">Book a Bedroom</a>
+				<a class="res-link mob" href="https://mobile.synxis.com/24922">Book a Bedroom</a>
+				<div id="menu-wrapper">
+					<div id="menu" style="display:none;">
+												<a id="menu-logo" href="/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/boundary-logo.svg" alt="logo" /></a>
+						<div id="menu-close">
+							<div class="line cross-left"></div>
+							<div class="line cross-right"></div>
+						</div>
+													<div class="menu-item">
+																<span class="sub-menu-btn">
+								
+									<div class="plus">
+										<div class="line plus-ver"></div>
+										<div class="line plus-hor"></div>
+									</div>
+									<a>Bedrooms</a>
+								</span>
+																									<a class="reservation-link link-desk" href="https://gc.synxis.com/rez.aspx?Hotel=24922&Chain=5154&template=GCF_BOUNDARY_V2&shell=GCF_BOUNDARY_V3&src=boundary">Book a Bedroom   ></a>
+									<a class="reservation-link link-mob" href="https://mobile.synxis.com/24922">Book a Bedroom   ></a>
+																									
+																<div class="sub-menu" style="display:none;">
+									<a href="http://boundary.london/rooms/">ABOUT</a>
+																		<a href="http://boundary.london/rooms/?scroll=bedroom_categories">Bedroom Categories</a>
+																	</div>
+															</div>
+													<div class="menu-item">
+																<span class="sub-menu-btn">
+								
+									<div class="plus">
+										<div class="line plus-ver"></div>
+										<div class="line plus-hor"></div>
+									</div>
+									<a>Rooftop</a>
+								</span>
+																									<a class="reservation-link" href="http://boundary.london/rooftop/?scroll=reservation">Reserve a Table   ></a>
+																									
+																<div class="sub-menu" style="display:none;">
+									<a href="http://boundary.london/rooftop/">ABOUT</a>
+																		<a href="http://boundary.london/rooftop/?scroll=menus">Menus</a>
+																		<a href="http://boundary.london/rooftop/?scroll=opening_hours">Opening Hours</a>
+																	</div>
+															</div>
+													<div class="menu-item">
+																<a href="http://boundary.london/restaurant-tratra/">Restaurant</a>
+																									<a class="reservation-link" href="http://boundary.london/restaurant-tratra/?scroll=reservation">Reserve a table   ></a>
+																									
+															</div>
+													<div class="menu-item">
+																<a href="http://boundary.london/albion/">Albion</a>
+																								
+															</div>
+													<div class="menu-item">
+																<a href="http://boundary.london/experience/">Experiences & News</a>
+																								
+															</div>
+													<div class="menu-item">
+																<a href="http://boundary.london/events-private-dining/">Events & Private Dining</a>
+																								
+															</div>
+													<div class="menu-item">
+																<a href="http://boundary.london/contact/">Contact</a>
+																								
+															</div>
+												<div id="menu-bottom">
+							<a href="https://www.instagram.com/boundaryldn/" target="_blank"><i class="fa fa-instagram"></i></a>
+							<a href="https://twitter.com/boundaryldn/" target="_blank"><i class="fa fa-twitter"></i></a>
+														<div>
+								ENTRANCE IN REDCHURCH STREET<br />
+								2-4 BOUNDARY STREET, LONDON E2 7DD<br />
+								<a href="https://www.google.co.uk/maps/place/Boundary+Restaurant,+Rooms+%26+Rooftop/@51.5244323,-0.0784829,17z/data=!3m1!4b1!4m2!3m1!1s0x48761cb0b2592281:0x417620e2d7ae120c" target="_blank">MAP</a> / 020 7729 1051
+							</div>
+							<h3>Newsletter Sign-up</h3>
+														<a id="newsletter-submit" href="newsletter/">SUBSCRIBE</a>
+							
+													</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$('#menu-btn').click(function() {
+					$('#menu').slideDown();
+				});
+				$('#menu-close').click(function() {
+					$('#menu').slideUp();
+				});
+				$('.sub-menu-btn').click(function() {
+					/*$(this).find('.plus-ver').addClass('ver-rotate');
+					$(this).find('.plus-hor').addClass('hoz-rotate');*/
+					$(this).parent().find('.sub-menu').slideToggle();
+				});
+			</script>
+		</div>			<div id="banner">
+		<div class="slide-wrapper">
+			<div id="slide-0" class="slide visible" style="background-image:url(http://boundary.london/wp-content/uploads/2017/04/TRATRA_web_banner_v3-1755x1170.gif);background-position:center center;"></div><div id="slide-1" class="slide" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_carousel_2000w_mod_8-1-1755x1170.jpg);background-position:center center;"></div><div id="slide-2" class="slide" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_restaurant_2000w_mod_6-1.jpg);background-position:center bottom;"></div><div id="slide-3" class="slide" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_homepage_2000w_3_mod-1800x1075.jpg);background-position:center center;"></div><div id="slide-4" class="slide" style="background-image:url(http://boundary.london/wp-content/uploads/2016/05/paul-raeside-.-8576-1755x1170.jpg);"></div>		</div>
+		<div id="left-wrapper">
+			<a id="left" class="controls"></a>
+		</div>
+		<div id="right-wrapper">
+			<a id="right" class="controls"></a>
+		</div>
+		<div class="banner-nav-wrapper">
+			<div class="banner-nav">
+									<a href="#slide-0"><i class="fa fa-circle"></i></a>
+									<a href="#slide-1"><i class="fa fa-circle"></i></a>
+									<a href="#slide-2"><i class="fa fa-circle"></i></a>
+									<a href="#slide-3"><i class="fa fa-circle"></i></a>
+									<a href="#slide-4"><i class="fa fa-circle"></i></a>
+							</div>
+		</div>
+		<a class="down vertical-bounce"></a>
+		<div class="banner-overlay">
+			<div class="content">
+
+			<div class="block-hover-top-extra" style="display: none;">
+				<div id="banner-hover" class="bannerpage330 slide-from-top">
+				<span class="text">
+				<img class="aligncenter" src="http://boundary.london/wp-content/uploads/2017/04/tratra_logo-768x656.jpg" alt="OPENING 10th MAY" style="max-height:160px;">
+				</span>
+				<div class="title">OPENING 10th MAY</div>
+				</div>
+			</div>
+
+				<div class="block-hover-top">
+					<div class="slide-from-top block-title">
+						Explore Boundary
+					</div>
+					<div class="slide-from-bottom block-link"><a class="banner-scroll" data-scroll="#boundary-bedrooms">Bedrooms</a></div><div class="slide-from-right block-link"><a class="banner-scroll" data-scroll="#boundary-rooftop">Rooftop</a></div><div class="slide-from-bottom block-link"><a class="banner-scroll" data-scroll="#tratra">Restaurant</a></div>				</div>
+			</div>
+		</div>
+		<script src="http://boundary.london/wp-content/themes/untitled-boundary/js/background_slideshow.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				setTimeout(function(){ 
+					$('#banner .down').fadeOut();
+				}, 1500);
+			});
+			/*$("#banner").hover(
+				function () {
+					$("#left, #right").fadeIn();
+				},
+				function () {
+					$("#left, #right").fadeOut();
+				}
+			);*/
+			
+			/*$('.banner-overlay').click(function() {
+				$('#right').trigger('click');
+			});*/
+		</script>
+	</div>
+	<div class="description-wrapper">
+		<div class="description">
+			<div>
+				<p>
+				Lovers of art, admirers of design and <em>bon vivants</em>: Boundary welcomes you.
+
+Boundary includes three award-winning restaurants and bars, twelve individually designed guest bedrooms, five individually designed studios, lofts and suites, a British food store and a bakery.
+
+A visit to Boundary is a new journey every time, the perfect mixture of great food and drink experiences, luxury hotel and the feeling you are in someones private designer home.				</p>
+				<a id="read-more">READ MORE</a>
+							</div>
+		</div>
+		<div id="desc-extra" style="display:none;">
+			<div>
+				Boundary’s architecture is a tribute to
+Shoreditch, and the confluence of old and
+new. 
+The dilapidated Victorian warehouse
+was restored and a striking copper, steel and
+glass extension has been added. Over fifty
+artists and designers contributed bespoke
+commissions for the interior, with everything
+overseen by Sir Terence Conran.
+<br /><br />
+The twelve elegant guestrooms are inspired
+by a legendary designer or design
+movement, from Le Corbusier and Eames
+to Shaker and Bauhaus. There are also five
+individually designed suites, including four
+loft duplexes with outside terraces.
+<br /><br />
+Boundary’s restaurant, a mainstay in
+Shoreditch, pays homage to classic and
+timeless French ingredients and recipes
+in a contemporary setting.
+<br /><br />
+Atop it all, Boundary’s popular rooftop
+bar and heated orangery attracts visitors
+all year round.
+<br /><br />
+An environmentally friendly approach
+has been adopted whereever possible
+at Boundary. This mantra has applied to
+all elements of the project, from selecting
+the materials to the use of local suppliers
+and installing the building’s bore holes.			</div>
+		</div>
+		<script type="text/javascript">
+			$('#read-more').click(function() {
+				if($('#desc-extra').is(':visible')) {
+					$('#desc-extra').slideUp();
+				} else {
+					$('#desc-extra').slideDown();
+					$('html, body').animate({
+						scrollTop: $('#desc-extra').offset().top - 100
+					}, 1000);
+				}
+			});
+		</script>
+	</div>
+	<div class="content-block" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_homepage_2000w_mod_2-1-1800x1102.jpg);background-position:right center;">				<div class="content" id="boundary-bedrooms">
+			<a class="banner-link" href="http://boundary.london/rooms/"></a>
+			<div class="block-hover">
+				<div class="block-title">Boundary Bedrooms</div>
+				<div class="block-link"><a href="http://boundary.london/rooms/">Explore</a></div>
+								<div class="reservation">
+										<a href="http://boundary.london/rooms/?scroll=reservation">Reservations</a>
+									</div>
+							</div>
+			<a class="down"><i></i></a>
+		</div>
+	</div>
+	<div class="content-block" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_homepage_2000w_3_mod-1800x1075.jpg);background-position:center center;">				<div class="content" id="boundary-rooftop">
+			<a class="banner-link" href="http://boundary.london/rooftop/"></a>
+			<div class="block-hover">
+				<div class="block-title">Boundary Rooftop</div>
+				<div class="block-link"><a href="http://boundary.london/rooftop/">Explore</a></div>
+								<div class="reservation">
+										<a href="http://boundary.london/rooftop/?scroll=reservation">Reservations</a>
+									</div>
+							</div>
+			<a class="down"><i></i></a>
+		</div>
+	</div>
+	<div class="content-block" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_homepage_2000w_mod_1-1-1755x1170.jpg);background-position:left center;">				<div class="content" id="tratra">
+			<a class="banner-link" href="http://boundary.london/restaurant-tratra/"></a>
+			<div class="block-hover">
+				<div class="block-title">Tratra</div>
+				<div class="block-link"><a href="http://boundary.london/restaurant-tratra/">Explore</a></div>
+								<div class="reservation">
+										<a href="http://boundary.london/restaurant-tratra/?scroll=reservation">Reservations</a>
+									</div>
+							</div>
+			<a class="down"><i></i></a>
+		</div>
+	</div>
+	<div class="content-block" style="background-image:url(http://boundary.london/wp-content/uploads/2016/03/bound_homepage_2000w_mod_4-1-1373x1170.jpg);background-position:center center;">				<div class="content" id="albion-cafe">
+			<a class="banner-link" href="http://boundary.london/albion/"></a>
+			<div class="block-hover">
+				<div class="block-title">Albion Cafe</div>
+				<div class="block-link"><a href="http://boundary.london/albion/">Explore</a></div>
+								<div class="reservation">
+										<a href="http://www.albioncaff.co.uk/" target="_blank">Visit</a>
+									</div>
+							</div>
+			<a class="down"><i></i></a>
+		</div>
+	</div>
+		<script type="text/javascript">
+		win_height = $(window).height();
+		$(document).scroll(function() {
+			position = $(document).scrollTop();
+			$('.content-block .block-hover').each(function() {
+				if($(this).offset().top - win_height  <= position - 100) {
+					$(this).find('.block-title').addClass('slide-from-left');
+					$(this).find('.block-link').addClass('slide-from-right');
+					$(this).find('.reservation').addClass('slide-from-top');
+					$(this).parent().find('.down').addClass('vertical-bounce');
+					var e = $(this);
+					setTimeout(function(){ e.parent().find('.down').fadeOut() }, 1500);
+				}
+			});
+		});
+		$('.banner-scroll').click(function() {
+			var element = $(this).data('scroll');
+			//$('body').scrollTo(element);
+			$('html, body').animate({
+				scrollTop: $(element).offset().top - 100
+			}, 1000);
+			return false;
+		});
+	</script>
+	<div id="news">
+	<div class="content">
+		<div id="news-header">Experiences &amp; News</div>
+		<div id="news-sub-header">Eat, Sleep, Drink, Learn</div>
+				<div class="news-block col-md-4 col-sm-6 col-xs-12">
+			<a href="http://boundary.london/2016/11/18/a-locals-guide-to-shoreditch-sunspel-2/"><img src="http://boundary.london/wp-content/uploads/2016/11/Screen-Shot-2016-11-18-at-16.56.20-674X449.jpg" alt="A Local's Guide to Shoreditch: Isabelle Fox" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/11/18/a-locals-guide-to-shoreditch-sunspel-2/">A Local's Guide to Shoreditch: Isabelle Fox</a></h3>
+				<p><a href="http://boundary.london/2016/11/18/a-locals-guide-to-shoreditch-sunspel-2/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/11/18/a-locals-guide-to-shoreditch-sunspel-2/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+						<div class="news-block col-md-4 col-sm-6 col-xs-12">
+			<a href="http://boundary.london/2016/09/19/a-locals-guide-to-shoreditch-sunspel/"><img src="http://boundary.london/wp-content/uploads/2016/09/IMG_2173-674X449.jpg" alt="A Local's Guide to Shoreditch: Sunspel" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/09/19/a-locals-guide-to-shoreditch-sunspel/">A Local's Guide to Shoreditch: Sunspel</a></h3>
+				<p><a href="http://boundary.london/2016/09/19/a-locals-guide-to-shoreditch-sunspel/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/09/19/a-locals-guide-to-shoreditch-sunspel/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+						<div class="news-block col-md-4 col-sm-6 col-xs-12">
+			<a href="http://boundary.london/2016/09/05/a-locals-guide-to-shoreditch-le-labo/"><img src="http://boundary.london/wp-content/uploads/2016/09/Liam-McGinn-Le-labo-674X449.jpg" alt="A Local’s Guide to Shoreditch: Le Labo" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/09/05/a-locals-guide-to-shoreditch-le-labo/">A Local’s Guide to Shoreditch: Le Labo</a></h3>
+				<p><a href="http://boundary.london/2016/09/05/a-locals-guide-to-shoreditch-le-labo/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/09/05/a-locals-guide-to-shoreditch-le-labo/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+						<div class="news-block col-md-4 col-sm-6 col-xs-12">
+			<a href="http://boundary.london/2016/08/30/a-locals-guide-to-shoreditch-frame/"><img src="http://boundary.london/wp-content/uploads/2016/08/Joan-Murphy-674X449.jpg" alt="A Local’s Guide to Shoreditch: Frame" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/08/30/a-locals-guide-to-shoreditch-frame/">A Local’s Guide to Shoreditch: Frame</a></h3>
+				<p><a href="http://boundary.london/2016/08/30/a-locals-guide-to-shoreditch-frame/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/08/30/a-locals-guide-to-shoreditch-frame/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+						<div class="news-block col-md-4 col-sm-6 col-xs-12 hidden-sm">
+			<a href="http://boundary.london/2016/08/22/a-locals-guide-to-shoreditch-kit-ace/"><img src="http://boundary.london/wp-content/uploads/2016/08/Christina-Albe-brand-manager--674X449.jpg" alt="A Local's Guide to Shoreditch: Kit & Ace" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/08/22/a-locals-guide-to-shoreditch-kit-ace/">A Local's Guide to Shoreditch: Kit & Ace</a></h3>
+				<p><a href="http://boundary.london/2016/08/22/a-locals-guide-to-shoreditch-kit-ace/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/08/22/a-locals-guide-to-shoreditch-kit-ace/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+						<div class="news-block col-md-4 col-sm-6 col-xs-12 hidden-sm">
+			<a href="http://boundary.london/2016/08/19/a-locals-guide-to-shoreditch-elementary/"><img src="http://boundary.london/wp-content/uploads/2016/08/ELEMENTARY_K-674X449.jpg" alt="A local's guide to Shoreditch: Elementary" /></a>
+			<div class="news-body">
+				<h3><a href="http://boundary.london/2016/08/19/a-locals-guide-to-shoreditch-elementary/">A local's guide to Shoreditch: Elementary</a></h3>
+				<p><a href="http://boundary.london/2016/08/19/a-locals-guide-to-shoreditch-elementary/"></a></p>
+				<a class="category" href="http://boundary.london/experience/?category_id=16">Latest News<i></i></a>
+				<a href="http://boundary.london/2016/08/19/a-locals-guide-to-shoreditch-elementary/"><img src="http://boundary.london/wp-content/themes/untitled-boundary/images/arrow.svg" alt="arrow-right" /></a>
+			</div>
+		</div>
+					</div>
+</div>
+<a class="news-view" href="http://boundary.london/experience/">View More</a>	<div id="footer">
+		<a href="http://boundary.london">
+			<img src="http://boundary.london/wp-content/themes/untitled-boundary/images/boundary-logo.svg" alt="logo" />
+		</a>
+		<div id="footer-social">
+			<a href="https://www.instagram.com/boundaryldn/" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://twitter.com/boundaryldn/" target="_blank"><i class="fa fa-twitter"></i></a>
+					</div>
+		<div id="footer-address">
+		ENTRANCE IN REDCHURCH STREET<br />
+		2-4 BOUNDARY STREET, SHOREDITCH, LONDON E2 7DD<br />
+		TEL 020 7729 1051 EMAIL <a href="mailto:info@boundary.london">info@boundary.london</a>
+		</div>
+		<div id="site-credits">
+			Boundary is part of the Prescott &amp; Conran food, wine and hotel group.<br />
+			<a href="http://www.prescottandconran.com/" target="_blank">www.prescottandconran.com</a> | &copy; 2017 Prescott &amp; Conran<br />
+			<a href="">Terms &amp; Conditions</a> | <a href="site-credits/">Site Credits</a>
+		</div>
+	</div>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-44075749-1', 'auto');
+	ga('send', 'pageview');
+
+	</script>
+	</body>
+</html>
+<!-- Dynamic page generated in 0.680 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-04-29 11:10:11 -->
+
+<!-- Compression = gzip -->

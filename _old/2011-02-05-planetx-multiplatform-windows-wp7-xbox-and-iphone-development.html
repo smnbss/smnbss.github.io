@@ -1,0 +1,69 @@
+---
+layout: post
+title: PlanetX, multiplatform (Windows, WP7, XBOX) and iPhone development
+date: 2011-02-05 22:09:02.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- iPhone
+- WP7
+- XBOX
+- XNA
+tags: []
+meta:
+  _oembed_3be79cef63fc6bb34fdfff990863a538: "{{unknown}}"
+  _oembed_7a7535ee842b56805887082c06372fa4: "{{unknown}}"
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_70c6e6a38adc449cf506ca754e4ec897: "{{unknown}}"
+  _oembed_9eb9c12a7d5d21e5598d1fe2a33c5021: "{{unknown}}"
+  _oembed_5533f53ddbcecd75b4b52a71fbe0fc19: "{{unknown}}"
+  _oembed_01ea54660c7a70869a4a3dd9579d4799: "{{unknown}}"
+  _oembed_1b512c2a29fc2660bf61ab5a754a7a1e: "{{unknown}}"
+  _oembed_efe30cf6d2b6ec04f69940defbbeef39: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>As I mentioned few days ago, I’m helping some friends to port a game from Windows to the XBOX, WP7 and iPhone.</p>
+<p>The game was originally developed at the global game jam in Italy, and you can download the original game from this Url <a class="vt-p" href="http://www.globalgamejam.org/2011/x-planets">http://www.globalgamejam.org/2011/x-planets</a>.</p>
+<p>The game was developed using XNA <a class="vt-p" href="http://msdn.microsoft.com/en-us/aa937791">http://msdn.microsoft.com/en-us/aa937791</a>, and I have to say that it’s really incredible the flexibility of that framework. Basically I started to work on that project just a week ago, and the only line of code I had to change to make it work on XBOX and WP7 was</p>
+<pre>this.cataclysmCount = Enum.GetValues(typeof(CataclysmEnum)).Length;</pre>
+<p>to</p>
+<pre>int i = 0;
+do
+{
+    try
+    {     
+       if(!Enum.IsDefined(typeof(CataclysmEnum), i))
+          break;       
+       i++;
+    }
+    catch
+    {
+     break;
+    }
+}
+while (true);
+this.cataclysmCount = i;</pre>
+<p>This is because Enum.GetValues is not supported in the .NET NETCF implementation that is used on the Windows Phone 7 and on the one used on the XBOX.</p>
+<p>The other change I’ll have to make to support the WP7 and XBOX the the code that handle the user input control.</p>
+<p>While on windows we have the mouse and the keyboard, on the phone we have the touch sensor and the Accelerometer <a class="vt-p" title="http://bit.ly/eGq5Be" href="http://bit.ly/eGq5Be">http://bit.ly/eGq5Be</a> and finally on the XBOX we have the joypad, with the dpad, thumbs sticks and buttons.</p>
+<p>The 4th chapter of this book <a class="vt-p" title="http://amzn.to/frlAmn" href="http://amzn.to/frlAmn">http://amzn.to/frlAmn</a> (Learning XNA 4.0: Game Development for the PC, Xbox 360, and Windows Phone 7) explains you exactly how to do that.</p>
+<p>Now, this development on VS 2010 and Windows is all on my comfort zone, but I was also asked to have a look at development for the iPhone.</p>
+<p>I do not have a Mac, and i do not have an iPhone, so how can I do my research and study without all those Apple goods? Well, I had to resort to a non official way obviously.</p>
+<p>So I found a Virtual machine with OSX (“Mac.OSX.Leopard_VMware.Workstation-TeamWersaq”), and after struggling with it for a good half an hour to make it work (the solution was to use the –legacy switch at the first boot prompt) I finally started to download a long list of software I need to do my experiments.</p>
+<p>On codeplex I found an interesting project, called XNATouch, and it looks like it’s the ideal solution for me to keep a shared code base between all my platforms.</p>
+<p>The list of software required to develop with XNATouch is the following</p>
+<p>1. Installed Apple's iPhone SDK 4.1</p>
+<p>2. Installed Mono for OSX</p>
+<p>3. Installed MonoDevelop for OS X</p>
+<p>4. Installed The MonoTouch SDK</p>
+<p>5. Downloaded XNATouch 1.0</p>
+<p>So I’m waiting for the download of iPhone SDK to complete and I’m good to go <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" src="{{ site.baseurl }}/assets/wlemoticon-smile.png" alt="Smile" /></p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2011/02/image7.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="image" src="{{ site.baseurl }}/assets/image_thumb7.png" border="0" alt="image" width="590" height="324" /></a></p>
+<p>[UPDATE] BTW, if I make enough money out of it I promise I’ll buy a Mac and an iPhone <img class="wlEmoticon wlEmoticon-winkingsmile" style="border-style:none;" src="{{ site.baseurl }}/assets/wlemoticon-winkingsmile.png" alt="Winking smile" /></p>

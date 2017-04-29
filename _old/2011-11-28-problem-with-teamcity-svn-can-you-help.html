@@ -1,0 +1,35 @@
+---
+layout: post
+title: 'Problem with @teamcity & #svn – can you help?'
+date: 2011-11-28 16:35:33.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Business
+- Computers and Internet
+tags: []
+meta: {}
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>&#160;</p>
+<p>We installed a new svn server on a linux box a few weeks ago and we’re now migrating all our repos to that new shiny box.</p>
+<p>We are using TeamCity Enterprise 6.0.1 (build 15816) as or CI platform, and while TC was perfectly able to talk to the old svn server running on a windows box, when we try to configure TC to read from the new one we got this error:</p>
+<p><strong>svn: SASL(-13): authentication failure: Password verification failed </strong></p>
+<p>If I try to connect to svn using Tortoise SVN, everything works just fine, but it looks like TC is unable to negotiate an authentication mechanism with svn, as you can see from TC logs:</p>
+<p align="left">[2011-11-28 16:16:00,953]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: READ</p>
+<p align="left">( success ( 2 2 ( ) ( edit-pipeline svndiff1 absent-entries commit-revprops depth log-revprops partial-replay ) ) )</p>
+<p align="left">[2011-11-28 16:16:00,953]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: SENT</p>
+<p align="left">( 2 ( edit-pipeline svndiff1 absent-entries depth mergeinfo log-revprops ) 38:svn://xxxbossvn02.tdpg.loc/EditorLite )</p>
+<p align="left">[2011-11-28 16:16:00,969]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: READ</p>
+<p align="left">( success ( ( PLAIN ) 36:3a6327f8-976c-bd49-aeeb-750278934a40 ) )</p>
+<p align="left"><b>[2011-11-28 16:16:00,969]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: SENT</b></p>
+<p align="left"><b>( PLAIN ( 4:AAA= ) )</b></p>
+<p align="left">[2011-11-28 16:16:00,969]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: READ</p>
+<p align="left"><b>( failure ( 63:SASL(-13): authentication failure: Password verification failed ) )</b></p>
+<p align="left">[2011-11-28 16:16:00,969]&#160; DEBUG -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; javasvn.output - NETWORK: svn: SASL(-13): authentication failure: Password verification failed</p>

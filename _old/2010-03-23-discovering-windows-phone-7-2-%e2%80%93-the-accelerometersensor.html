@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'Discovering Windows Phone 7 #2 – The AccelerometerSensor'
+date: 2010-03-23 21:05:05.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- WP7
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1919')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_19212487445e399a391b44e01fe70c0f: "{{unknown}}"
+  _oembed_ff31573a317ae7ce9fecb5e8225701cc: "{{unknown}}"
+  _oembed_9ca76d2aeff9aaae7d9d19f4b9155ed3: "{{unknown}}"
+  _oembed_fb72272e837a50d4ac345c978a0f1be7: "{{unknown}}"
+  _oembed_62bc58af340990e07e91d1159955a553: "{{unknown}}"
+  _oembed_dc24105dca5a36b47aa8a24fef1121e8: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1919" class="bvMsg">
+<p>Microsoft.Devices.Sensors.Sensor.AccelerometerSensor implement is a physic device that measure force applied on the 3 axes of your device over time.</p>
+<p><a class="vt-p" rel="WLPP" href="https://mzp8bw.bay.livefilestore.com/y1myWjwV9TU_pGZX22ZKEmt3q5uBKkeGbBTzTjxiyVIygMpfbLFva_5jBjZOC8ViH_X4pp2fBDCPiA6_zS_fBJDv2OaaMJ5oVmDooDI23MCSCAqg3kfbzOVsbmRzwHdcPVrnNLoqcvBMYKdHscCt0l7XQ/image[3] 39325299.png"><img style="display:inline;margin-left:0;margin-right:0;border-width:0;" title="image" src="{{ site.baseurl }}/assets/image_thumb[1].png" border="0" alt="image" width="243" height="244" align="left" /></a></p>
+<p>As explained here <a class="vt-p" href="http://live.visitmix.com/MIX10/Sessions/CL16">http://live.visitmix.com/MIX10/Sessions/CL16</a>, if the device is sitting on the desk with the screen upside, the force will be –1 gravity on Z, if it’s sitting in portrait orientation the force will be –1G on Y, if it’s sitting in Landscape mode the force will be –1 on X.</p>
+<blockquote><p>Unfortunately the Emulator does not support yet the AccelerometerSensor, and unfortunately we do not have a Windows Phone yet.</p>
+<p>Thanks to Pete Blois and his Labyrinth Sample for Windows Phone (<a class="vt-p" title="http://blois.us/blog/2010/03/labyrinth-sample-for-windows-phone.html" href="http://blois.us/blog/2010/03/labyrinth-sample-for-windows-phone.html">http://blois.us/blog/2010/03/labyrinth-sample-for-windows-phone.html</a>) there’s a simple way to test your app and use your mouse to apply G forces on X and Z.<br />
+He created a clever AccelerometerProxy that use the mouse movement to generate fake forces that you can use on your app.</p></blockquote>
+<p>The proxy also include a cleverer AccelerometerEventArgs that replace the original AccelerometerReadingAsyncEventArgs. With the original one, to get the X and Y forces you had to type e.Value.Value.X, while on the AccelerometerEventArgs you can simply use e.X and e.Z.</p>
+<p>Here (<a class="vt-p" href="http://cid-a117aa5e007a0648.skydrive.live.com/self.aspx/Windows Mobile 7 Examples/WindowsPhoneAccelerometerApplication.zip">http://cid-a117aa5e007a0648.skydrive.live.com/self.aspx/Windows%20Mobile%207%20Examples/WindowsPhoneAccelerometerApplication.zip</a>) you can download my working example of the “One Button” example demoed in the CL16 session using the fake accelerometer.</p>
+<p>To test it, click the button, then click somewhere else on the emulator screen and drag the mouse.</p>
+<div style="margin:0;padding:0;"></div>
+</div>

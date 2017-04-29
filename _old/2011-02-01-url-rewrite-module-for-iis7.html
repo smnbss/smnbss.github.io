@@ -1,0 +1,38 @@
+---
+layout: post
+title: URL Rewrite Module for IIS7
+date: 2011-02-01 16:04:45.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+- IIS
+tags: []
+meta:
+  _oembed_0e32a437c13af6f1d7368fb1a63a987f: "{{unknown}}"
+  _oembed_166fa1b73549016b769aebaffffcf481: "{{unknown}}"
+  _oembed_aa9c35b574c12fb03426ff6aa321fbf9: "{{unknown}}"
+  _oembed_2a14a8d4205550b916de7e615adec8ae: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>At my workplace we had a project in beta for a while, and the address was something like beta.domain.com, and yesterday we finally released it to the public. The site in beta.domain.com has replaced the old site at <a href="http://www.domain.com">www.domain.com</a>, so we had to find a way to redirect all the users from beta.domain.com to <a href="http://www.domain.com">www.domain.com</a>.</p>
+<p>We are running our site on a Windows 2008 R2 Standard OS, so we are using IIS 7.5.</p>
+<p>My first attempt was with the HTTP Redirect module:</p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb.png" width="446" height="175" /></a></p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image1.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb1.png" width="348" height="213" /></a></p>
+<p>Basically I configured a 2nd website on my box, that respond to beta.domain.com and redirect all the calls to <a href="http://www.domain.com">www.domain.com</a>, and that kind of worked, but almost immediately I noticed a problem with it: it was not forwarding the query string from the beta domain to the live domain.</p>
+<p><strong>I decided to try with&#160; URL Rewrite Module 2.0 for IIS 7</strong> <a title="http://bit.ly/9MJy5J" href="http://bit.ly/9MJy5J">http://bit.ly/9MJy5J</a>, so I fired up the Web Platform Installer, searched for the rewrite module and installed it.</p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image2.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb2.png" width="446" height="76" /></a></p>
+<p>It comes as a new feature in IIS.</p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image3.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb3.png" width="446" height="126" /></a></p>
+<p>Once you open the new feature, you can, with a few clicks, configure a canonical domain name that you want to use for that specific website, you can then configure multiple host names on the website and all the request will be 301 redirected to the unique canonical name that you really want to use for your site.</p>
+<p><a href="http://smnbss.files.wordpress.com/2011/02/image4.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="image" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb4.png" width="446" height="260" /></a></p>
+<p>There’s obviously much more you can do with this URL Rewrite Module.    <br />The module basically support all the configurations you can do with mod_rewrite in Apache, making <a title="http://www.isapirewrite.com/" href="http://www.isapirewrite.com/">http://www.isapirewrite.com/</a> obsolete.    <br />On my home server I use it as a reverse proxy (when used in conjunction with Application Request Routing <a title="http://bit.ly/diPNwF" href="http://bit.ly/diPNwF">http://bit.ly/diPNwF</a>) to redirect some custom domains to services hosted on other boxes I’ve got at home. </p>
+<p>I invite you to read this list of articles <a href="http://learn.iis.net/page.aspx/737/url-rewrite-module-2/">http://learn.iis.net/page.aspx/737/url-rewrite-module-2/</a> to know more about it.</p>

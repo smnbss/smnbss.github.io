@@ -1,0 +1,54 @@
+---
+layout: post
+title: Unveil the Power of BDD with SpecFlow and Selenium Part 1
+date: 2010-11-02 17:22:07.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+- Testing
+tags: []
+meta:
+  _oembed_0aa7b8946f8be7a46f5f75bb0d38d4ec: "{{unknown}}"
+  _oembed_5cc8143ea5af4fa46dd5a0a9a81228ee: "{{unknown}}"
+  _oembed_8891a48eb6ea44d2cdea4fbd4f900d4a: "{{unknown}}"
+  _oembed_cfbec7fe97ad0a79dc9b64b6081c6e58: "{{unknown}}"
+  _edit_last: '12010457'
+  _wp_old_slug: ''
+  _wpas_done_ms: '1'
+  _oembed_5f58418502c90a520218d2e3d4eb2ed1: "{{unknown}}"
+  _oembed_90cecb8998ee8c756611313049625e43: "{{unknown}}"
+  _oembed_33186413c7e3a259ac83ac4eecd584a9: "{{unknown}}"
+  _oembed_1856d51ad614a72bcb696f2c392e0204: "{{unknown}}"
+  _oembed_2a9458e29d8626f19a839a15a3f5b01e: "{{unknown}}"
+  _oembed_8d5c462fe7fd39670c7fe7986a59d378: "{{unknown}}"
+  _oembed_8c75187d5957db2575137e1d1ec9b439: "{{unknown}}"
+  _oembed_cdab86e0f5b07a5e7065051c63346364: "{{unknown}}"
+  _oembed_fda10d942e2b021e8fd5db3210b3e408: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>I am working at a business intelligent product for estate agents, and being it a quite unique and new product, the specs are always changing to meet the agents requirements, that are often very different depending on their market.</p>
+<p>First: Selenium is clearly the product I want to use to do UI testing. It’s the most widely adopted product to do Test Automation for Web Applications, and it’s used an supported by Google.   <br />For a certain period I considered to use WebAii, I love their APIs, much more .NET friendly, but It couldn’t run tests with chrome at that time, so I dropped it for Selenium.</p>
+<p>Second: I needed a way to keep business requirements in sync with my behaviour testing suite. BDD is a widely accepted&#160; agile software development technique, that allows to write test in the Given/When/Then form, a concept similar to the AAA(Arrange, Act, Assert) used in TDD. There are many different frameworks (<a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development#Tools">http://en.wikipedia.org/wiki/Behavior_Driven_Development#Tools</a>) that helps with BDD in .NET, many makes you write code to define tests, but the one I like the most is SpecFlow.    <br />The reason why I like SpecFlow, is that it allows me to write the tests in plan English.    <br />It uses gherkin as language(<a href="http://github.com/aslakhellesoy/cucumber/wiki/gherkin">http://github.com/aslakhellesoy/cucumber/wiki/gherkin</a>). It was first used by Cucumber for Ruby another BDD framework for Ruby.</p>
+<p>This allows me to write the tests together with the business team, there’s nothing technical about it, and it really make the requirements clear for the business and development team, and help to manage the end user expectations.</p>
+<p><a href="http://smnbss.files.wordpress.com/2010/11/untitled.png"><img style="background-image:none;border-bottom:0;border-left:0;padding-left:0;padding-right:0;display:inline;border-top:0;border-right:0;padding-top:0;" title="Untitled" border="0" alt="Untitled" src="{{ site.baseurl }}/assets/untitled_thumb.png" width="450" height="97" /></a></p>
+<p>“SpecFlow aims at bridging the communication gap between domain experts and developers by binding business readable behaviour specifications to the underlying implementation.”</p>
+<p align="right"><a href="http://specflow.org/">http://specflow.org/</a></p>
+<p align="left">“Selenium is a robust set of tools that supports rapid development of test automation for web-based applications. Selenium provides a rich set of testing functions specifically geared to the needs of testing of a web application. These operations are highly flexible, allowing many options for locating UI elements and comparing expected test results against actual application behaviour.”</p>
+<p align="right"><a href="http://seleniumhq.org/">http://seleniumhq.org/</a></p>
+<p>Here you can download the example of how I’m using the 2 together.</p>
+<p><strong>Prerequisites:     <br /></strong>Install&#160;&#160;&#160; Web Deployment Tool<a href="http://www.iis.net/download/webdeploy">     <br />http://www.iis.net/download/webdeploy</a></p>
+<p>Install Java JDK&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">     <br />http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>    </p>
+<p>Install SpecFlow&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; References/SpecFlowSetup_v1.4.0.msi    </p>
+<p>Have a look at&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; References/SpecFlow Guide.pdf    <br />&#160;&#160;&#160; *if you want to change the testing framework</p>
+<p><a href="http://cid-a117aa5e007a0648.office.live.com/self.aspx/ProgrammingExamples/smnbss.Selenium.zip"><img alt="Download" src="{{ site.baseurl }}/assets/Zip.png" /></a><a href="http://cid-a117aa5e007a0648.office.live.com/self.aspx/ProgrammingExamples/smnbss.Selenium.zip">Download the example</a></p>
+<p>OPEN the solution   <br />RUN smnbss.Selenium.Web    <br />RUN the tests in smnbss.Selenium</p>
+<p align="left">&#160;</p>
+<p>In part 2 I’ll explain my implementation.</p>

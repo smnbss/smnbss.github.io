@@ -1,0 +1,26 @@
+---
+layout: post
+title: VMWare to Virtual Server via ADS & VSMT
+date: 2005-05-20 14:16:13.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!183')?authkey=lwWj0qyaeIE%24
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!183" class="bvMsg">
+<p>Just for begin, i think i must explain ADS &amp; VSMT acronym:<br />ADS : <a href="http://www.microsoft.com/windowsserver2003/technologies/management/ads/default.mspx"><font size="-1">Automated Deployment Services</font> </a><br />VSMT : <a href="http://www.microsoft.com/windowsserversystem/virtualserver/evaluation/vsmt.mspx">Microsoft Virtual Server 2005 Migration Toolkit</a></p>
+<p>You only need this 2 software to do the job. (only???? 60 MB of software...)<br />ADS generate all the scripts necessary to &quot;deploy&quot; vmware to virtual pc using VSMT.</p>
+<p>It's not too complicated, you have only to follow those steps you find in Virtual Server 2005 Migration Toolkit User's Guide:<br />Step 1: Prepare the source computer <br />Step 2: Change the device drivers to be installed on the virtual machine <br />Step 3: Change the startup state of a driver or service <br />Step 4: Gather configuration information <br />Step 5: Validate configuration information <br />Step 6: Load system files <br />Step 7: Generate migration scripts <br />Step 8: Enable image encryption <br />Step 9: Capture the source image <br />Step 10: Create the virtual machine <br />Step 11: Deploy the image <br />Step 12: Complete the deployment </p>
+<p>The most problem i had is at step 11, when i've to deploy the image.<br />Virtual Server in PXE boot mode, wasn't able to contact ADS.<br />There is an article (KB<font size="2">875533</font>) that talk about that, but my problem wasn't solved installing the patch.<br />Before run <font face="Courier New"><em>Source</em>_DeployVM.cmd</font> i had to change the virtual network adapter of the new created Virtual Server, from the default (the one set up from the script) to my phisical network adapter.<br />After that i've been able to deploy the disk images to the new virtual machine.</p>
+<p>I losed 2 days...<br />It looks simple, but at the first try u may have some problems.</p>
+</div>

@@ -1,0 +1,124 @@
+---
+layout: post
+title: robocopy /?
+date: 2008-12-03 16:59:36.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Computers and Internet
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1361')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div class="bvMsg" id="msgcns!A117AA5E007A0648!1361">
+<p>I need to move backup files from 4 machines to the backup repository</p>
+<p>I find robocopy very useful:</p>
+<p>robocopy "\10.0.26.5backup" "D:BACKUP10_0_26_5" /MIR /MOVE /MINAGE:1</p>
+<p>C:Documents and SettingsAdministrator&gt;robocopy /?</p>
+<p>-------------------------------------------------------------------------------<br />
+ROBOCOPY     ::     Robust File Copy for Windows     ::     Version XP010<br />
+-------------------------------------------------------------------------------</p>
+<p>Started : Wed Dec 03 08:56:58 2008</p>
+<p>Usage :: ROBOCOPY source destination [file [file]...] [options]</p>
+<p>source :: Source Directory (drive:path or \serversharepath).<br />
+destination :: Destination Dir  (drive:path or \serversharepath).<br />
+file :: File(s) to copy  (names/wildcards: default is "*.*").</p>
+<p>::<br />
+:: Copy options :<br />
+::<br />
+/S :: copy Subdirectories, but not empty ones.<br />
+/E :: copy subdirectories, including Empty ones.<br />
+/LEV:n :: only copy the top n LEVels of the source directory tree.</p>
+<p>/Z :: copy files in restartable mode.<br />
+/B :: copy files in Backup mode.<br />
+/ZB :: use restartable mode; if access denied use Backup mode.</p>
+<p>/COPY:copyflag[s] :: what to COPY (default is /COPY:DAT).<br />
+(copyflags : D=Data, A=Attributes, T=Timestamps).<br />
+(S=Security=NTFS ACLs, O=Owner info, U=aUditing info).</p>
+<p>/SEC :: copy files with SECurity (equivalent to /COPY:DATS).<br />
+/COPYALL :: COPY ALL file info (equivalent to /COPY:DATSOU).<br />
+/NOCOPY :: COPY NO file info (useful with /PURGE).</p>
+<p>/PURGE :: delete dest files/dirs that no longer exist in source.<br />
+/MIR :: MIRror a directory tree (equivalent to /E plus /PURGE).</p>
+<p>/MOV :: MOVe files (delete from source after copying).<br />
+/MOVE :: MOVE files AND dirs (delete from source after copying).</p>
+<p>/A+:[RASHNT] :: add the given Attributes to copied files.<br />
+/A-:[RASHNT] :: remove the given Attributes from copied files.</p>
+<p>/CREATE :: CREATE directory tree and zero-length files only.<br />
+/FAT :: create destination files using 8.3 FAT file names only.<br />
+/FFT :: assume FAT File Times (2-second granularity).<br />
+/256 :: turn off very long path (&gt; 256 characters) support.</p>
+<p>/MON:n :: MONitor source; run again when more than n changes seen.<br />
+/MOT:m :: MOnitor source; run again in m minutes Time, if changed.</p>
+<p>/RH:hhmm-hhmm :: Run Hours - times when new copies may be started.<br />
+/PF :: check run hours on a Per File (not per pass) basis.</p>
+<p>/IPG:n :: Inter-Packet Gap (ms), to free bandwidth on slow lines.</p>
+<p>::<br />
+:: File Selection Options :<br />
+::<br />
+/A :: copy only files with the Archive attribute set.<br />
+/M :: copy only files with the Archive attribute and reset it.<br />
+/IA:[RASHCNETO] :: Include only files with any of the given Attributes set.<br />
+/XA:[RASHCNETO] :: eXclude files with any of the given Attributes set.</p>
+<p>/XF file [file]... :: eXclude Files matching given names/paths/wildcards.<br />
+/XD dirs [dirs]... :: eXclude Directories matching given names/paths.</p>
+<p>/XC :: eXclude Changed files.<br />
+/XN :: eXclude Newer files.<br />
+/XO :: eXclude Older files.<br />
+/XX :: eXclude eXtra files and directories.<br />
+/XL :: eXclude Lonely files and directories.<br />
+/IS :: Include Same files.<br />
+/IT :: Include Tweaked files.</p>
+<p>/MAX:n :: MAXimum file size - exclude files bigger than n bytes.<br />
+/MIN:n :: MINimum file size - exclude files smaller than n bytes.</p>
+<p>/MAXAGE:n :: MAXimum file AGE - exclude files older than n days/date.<br />
+/MINAGE:n :: MINimum file AGE - exclude files newer than n days/date.<br />
+/MAXLAD:n :: MAXimum Last Access Date - exclude files unused since n.<br />
+/MINLAD:n :: MINimum Last Access Date - exclude files used since n.<br />
+(If n &lt; 1900 then n = n days, else n = YYYYMMDD date).</p>
+<p>/XJ :: eXclude Junction points. (normally included by default).</p>
+<p>::<br />
+:: Retry Options :<br />
+::<br />
+/R:n :: number of Retries on failed copies: default 1 million.<br />
+/W:n :: Wait time between retries: default is 30 seconds.</p>
+<p>/REG :: Save /R:n and /W:n in the Registry as default settings.</p>
+<p>/TBD :: wait for sharenames To Be Defined (retry error 67).</p>
+<p>::<br />
+:: Logging Options :<br />
+::<br />
+/L :: List only - don't copy, timestamp or delete any files.<br />
+/X :: report all eXtra files, not just those selected.<br />
+/V :: produce Verbose output, showing skipped files.<br />
+/TS :: include source file Time Stamps in the output.<br />
+/FP :: include Full Pathname of files in the output.</p>
+<p>/NS :: No Size - don't log file sizes.<br />
+/NC :: No Class - don't log file classes.<br />
+/NFL :: No File List - don't log file names.<br />
+/NDL :: No Directory List - don't log directory names.</p>
+<p>/NP :: No Progress - don't display % copied.<br />
+/ETA :: show Estimated Time of Arrival of copied files.</p>
+<p>/LOG:file :: output status to LOG file (overwrite existing log).<br />
+/LOG+:file :: output status to LOG file (append to existing log).</p>
+<p>/TEE :: output to console window, as well as the log file.</p>
+<p>/NJH :: No Job Header.<br />
+/NJS :: No Job Summary.</p>
+<p>::<br />
+:: Job Options :<br />
+::<br />
+/JOB:jobname :: take parameters from the named JOB file.<br />
+/SAVE:jobname :: SAVE parameters to the named job file<br />
+/QUIT :: QUIT after processing command line (to view parameters).</p>
+<p>/NOSD :: NO Source Directory is specified.<br />
+/NODD :: NO Destination Directory is specified.<br />
+/IF :: Include the following Files.</p>
+<p>C:Documents and SettingsAdministrator&gt;</p>
+</div>

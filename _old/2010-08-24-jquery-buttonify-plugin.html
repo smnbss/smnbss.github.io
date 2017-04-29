@@ -1,0 +1,45 @@
+---
+layout: post
+title: jQuery.Buttonify plugin
+date: 2010-08-24 11:52:50.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!2003')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_3ec885b837e54c7f82085ecbedbd8be3: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!2003" class="bvMsg">
+<p>For the project I’m working on at the moment, we needed a lot of buttons with different texts.<br />
+Initially each button was created as an image by the designer, multiple images where generated to manage different statuses (mouse over, button disabled, etc).</p>
+<p>When you have 15 buttons in a project, it means managing 15*3 potential different images and requests to the server.</p>
+<p>Looking at <a class="vt-p" href="http://developer.yahoo.com/performance/rules.html">Best Practices for Speeding Up Your Web Site</a> this clearly didn’t worked.</p>
+<p>What I came out with is a jquery plugin that uses a little bit of javascript and a little bit of js, that allows you to have as many buttons as you want with a minimal overhead.</p>
+<p>If you want to add a new button style, the only thing you need to do is to add a new set of css classes</p>
+<p>.buttonify.newstyle,<br />
+a.buttonify.newstyle,<br />
+a.buttonify.newstyle:link,<br />
+a.buttonify.newstyle:visited<br />
+{<br />
+background:url("<a class="vt-p" href="http://github.com/smnbss/jQuery.Buttonify/raw/master/smnbss-jQuery.Buttonify/Scripts/buttonifier/css/images/bg_button_a_big.gif&quot;)">/Scripts/buttonifier/css/images/bg_button_a_newstyle.gif")</a> no-repeat scroll right top transparent;<br />
+span<br />
+{<br />
+background:url("<a class="vt-p" href="http://github.com/smnbss/jQuery.Buttonify/raw/master/smnbss-jQuery.Buttonify/Scripts/buttonifier/css/images/bg_button_span_big.gif&quot;)">Scripts/buttonifier/css/images/bg_button_span_newstyle.gif")</a> no-repeat scroll 0 0 transparent;<br />
+}<br />
+}</p>
+<p>and you can use it in your page</p>
+<p>have a look at the the example here</p>
+<p><a class="vt-p" href="http://smnbss.github.com/jQuery.Buttonify/">http://smnbss.github.com/jQuery.Buttonify/</a></p>
+</div>

@@ -1,0 +1,38 @@
+---
+layout: post
+title: YSlow and ETag fix...
+date: 2008-07-28 20:39:51.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- ASP.NET
+- Internet
+tags: []
+meta:
+  spaces_7b05daeb9da85359c19f677d2427d74f_permalink: http://cid-a117aa5e007a0648.users.api.live.net/Users(-6838810188427164088)/Blogs('A117AA5E007A0648!102')/Entries('A117AA5E007A0648!1303')?authkey=lwWj0qyaeIE%24
+  _edit_last: '12010457'
+  _wpas_skip_ms: '1'
+  _oembed_aca53b56d1897e0ce1c11c2aae58ea1a: "{{unknown}}"
+  _oembed_d174beaba24af7a5f2383fa8a98fca5a: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<div id="msgcns!A117AA5E007A0648!1303" class="bvMsg">
+<p>Performances are everything!<br />
+So every decent web developer probably know Yahoo YSlow and his ranking system.<br />
+One of this rule has been particularly a mystery in the last few months... <a class="vt-p" href="http://en.wikipedia.org/wiki/HTTP_ETag">ETag</a></p>
+<p><em>"An <strong>ETag</strong> (entity tag) is an </em><a class="vt-p" href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><em>HTTP</em></a><em> response header returned by an HTTP/1.1 compliant </em><a class="vt-p" href="http://en.wikipedia.org/wiki/Web_server"><em>web server</em></a><em> used to determine change in content at a given </em><a class="vt-p" href="http://en.wikipedia.org/wiki/Uniform_Resource_Locator"><em>URL</em></a><em>. [...]</em></p>
+<p><em>If a site has multiple servers that serve files (i.e. </em><a class="vt-p" href="http://en.wikipedia.org/wiki/Load_balancing"><em>load balancing</em></a><em>), a user may request for the same file and get a response from different machines. If the inode is used to generate the ETag, it will be different causing the file to be re-downloaded."</em></p>
+<p>So how to disable ETags on IIS6? I've seen a lot of workaround, ISAPI filters, strange system configurations... until.. I've seen the light...</p>
+<p>from <a class="vt-p" title="http://www.turtle.net.nz/blog/post/YSlowUsingIIS/comments" href="http://www.turtle.net.nz/blog/post/YSlowUsingIIS/comments">http://www.turtle.net.nz/blog/post/YSlowUsingIIS/comments</a></p>
+<p><a class="vt-p"><em>Purvesh</em></a><em> - @ 19 Dec 2007 03:46<br />
+Hi Guys even no need to implement module to remove Etag just go to Inetmgr and add header in your web site Key = "Etag" Value = "" it will remove Etag from your .js,.Css and .image file.</em></p>
+<p>Simply working and cleaver!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>

@@ -1,0 +1,57 @@
+---
+layout: post
+title: First approach with CQRS
+date: 2011-10-30 22:23:57.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- ".NET"
+- ASP.NET
+tags: []
+meta:
+  _edit_last: '12010457'
+  _oembed_abc4bc522c043e7fcb45d82b5de1bd9a: "{{unknown}}"
+  _oembed_701014aadd8d66eb113d7dfdc54553e7: "{{unknown}}"
+  _oembed_492ef8bbc8b3d23aed359389ea3d7d89: "{{unknown}}"
+  _oembed_55b2ee8e0c089dfd1fc25e9d20545f7c: "{{unknown}}"
+author:
+  login: smnbss
+  email: smnbss@hotmail.com
+  display_name: smnbss
+  first_name: ''
+  last_name: ''
+---
+<p>I’ve started to use CQRS at work last week.</p>
+<p>On my project, this used to be the architecture layering: an MVC app, with some logic on the Controllers that call n services that get the data from the repositories, bring the model back to the controller and render the page. Job done.</p>
+<p>Number of classes needed to get some data from the DB to the UI:</p>
+<p>1 controller + 1 test class</p>
+<p>1 query class</p>
+<p>1 service + 1 test class</p>
+<p>1 repository + 1 test class</p>
+<p>1 response data model</p>
+<p>&nbsp;</p>
+<p>8 files</p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2011/10/image2.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="image2" alt="image2" src="{{ site.baseurl }}/assets/image2_thumb.jpg" width="600" height="395" border="0" /></a></p>
+<p>We’ve recently started to investigate CQRS, and we are now having 2 different scenarios: query and command.</p>
+<p>The most complex scenario is when The UI call a controller action to do something and get some data back. in this case I need to create:</p>
+<p>1 controller + 1 test class</p>
+<p>1 query object</p>
+<p>1 service to wrap the business logic + 1 test class</p>
+<p>1 command handler + 1 test class</p>
+<p>1 command</p>
+<p>1 repository to read from the db + 1 test class</p>
+<p>1 repository to write to the db + 1 test class</p>
+<p>1 response data model</p>
+<p>13 classes</p>
+<p><a class="vt-p" href="http://smnbss.files.wordpress.com/2011/10/image1.jpg"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="image1" alt="image1" src="{{ site.baseurl }}/assets/image1_thumb.jpg" width="600" height="709" border="0" /></a></p>
+<p>&nbsp;</p>
+<p>Basically to solve the most common problem (execute a command and get some data back to the UI) I now need 13 classes rather than the usual 8 I was using before.</p>
+<p>It looks like a lot more work to do, let’s hope the Responsibility Segregation and the ease of testing each different class and piece of code will be good in the long term.</p>
+<p>&nbsp;</p>
+<p>I got a code example for CQRS from Mark Nijhof:<br />
+MarkNijhof/Fohjin - GitHub <a class="vt-p" href="http://bit.ly/v2c9Ts">http://bit.ly/v2c9Ts</a></p>
+<p>Few more articles I recommend to read:</p>
+<p>Martin Fowler: CQRS <a class="vt-p" href="http://bit.ly/sFPqcR">http://bit.ly/sFPqcR</a><br />
+CQRS, Task Based UIs, Event Sourcing agh! | Greg Young <a class="vt-p" href="http://bit.ly/uUkgr7Elegant">http://bit.ly/uUkgr7<br />
+Elegant</a> Code » CQRS à la Greg Young <a class="vt-p" href="http://bit.ly/uZUhsE">http://bit.ly/uZUhsE</a></p>
